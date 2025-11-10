@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>T-IT - Комплексное Техническое Обслуживание Компьютеров и IT-Аутсорсинг в Павлодаре</title>
+  <style>
+    :root{
+      --accent:#4a90e2;
+      --dark:#0f1723;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.06);
+      --max-width:1100px;
+      --radius:14px;
+      --shadow: 0 8px 30px rgba(15,23,35,0.18);
+      font-family: Inter, Roboto, Arial, sans-serif;
+    }
+    /* F0E7D5 */
+
+    *{ box-sizing: border-box; }
+
+    html, body{
+      height:100%;
+      margin:0;
+      background:linear-gradient(180deg,#e6e9ee 0%, #bfbfc3 100%);
+      color:var(--dark);
+      
+    }
+    .wrap{
+      max-width:var(--max-width);
+      margin:36px auto;
+      padding:0 20px;
+    }
+
+    header.header { 
+      display:flex; 
+      align-items:center; 
+      gap:20px; 
+      background:transparent; 
+      padding:18px; 
+      border-radius:12px;
+    }
+    .logo { 
+      display:flex; 
+      align-items:center; 
+      gap:14px;
+    }
+    .logo img { 
+      width:56px; 
+      height:56px; 
+      border-radius:8px; 
+      object-fit:cover; 
+      box-shadow:var(--shadow);
+    }
+    .brand { line-height: 1.5; }
+    .brand h1 { 
+      margin:0; 
+      font-size:20px; 
+      letter-spacing:0.6px;
+    }
+    .brand p { 
+      margin:0; 
+      color:var(--muted); 
+      font-size:13px;
+    }
+
+    .contacts { 
+      margin-left:auto; 
+      text-align:right; 
+    }
+    .contacts .phone{
+      font-weight:700;
+      color:var(--dark);
+    }
+    .contacts .small{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    nav.nav{
+      margin-top:18px;
+      background:linear-gradient(180deg, rgba(74,144,226,0.95), rgba(74,144,226,0.9));
+      color: rgba(255, 255, 255, 0.902);
+      padding:10px;
+      border-radius:10px;
+      box-shadow:0 6px 20px rgba(74,144,226,0.12);
+    }
+    nav .menu{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    nav a{
+      color: white;
+      text-decoration:none;
+      font-weight:600;
+      padding:8px 10px;
+      border-radius:8px;
+    }
+    nav a:hover{background:rgba(255,255,255,0.08);}
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      margin-top:20px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      min-height:340px;
+    }
+    .hero .left{
+      padding:28px 34px;
+      position:relative;
+    }
+    .hero .h-title{
+      font-size:28px;
+      margin:0 0 6px;
+    }
+    .hero p.lead{
+      color:var(--muted);
+      margin:0 0 18px;
+    }
+    .hero .cta{
+      display: inline-block;
+      background:var(--accent);
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration: none;
+      font-weight:700;
+      box-shadow:0 6px 16px rgba(74,144,226,0.24)}
+
+    .hero .right{
+      background-image:url('6435b69f-6fca-4d93-aaff-7261a7d06725.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .hero .overlay{
+      position: absolute;
+      inset: 0;
+      background:linear-gradient(180deg, rgba(15,23,35,0.12), rgba(15,23,35,0.28));
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      color:white;
+      padding: 12px;
+    }
+
+    .hero .overlay h2{
+      margin:0;
+      padding:12px 22px;
+      background:rgba(0,0,0,0.35);
+      border-radius:8px;
+      text-align: center;
+    }
+
+    .content{ padding: 28px 34px }
+    .content h3{ margin-top: 0 }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .service{
+      background:linear-gradient(180deg,#fafbff,#f3f6fb);
+      padding:18px;
+      border-radius:10px;
+      border:1px solid rgba(15,23,35,0.03);
+    }
+    .service h4{ margin:0 0 8px }
+    .service p{ 
+      margin: 0;
+      color:var(--muted);
+      font-size: 14px;
+    }
+
+    footer{
+      padding: 18px;
+      text-align:center;
+      color:var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width:980px){
+      .hero{ grid-template-columns: 1fr; }
+      .hero .right{ min-height: 220px; }
+      .grid{ grid-template-columns:repeat(2,1fr);}
+    }
+    @media (max-width: 560px){
+      .contacts{display: none;}
+      .grid{grid-template-columns:1fr;}
+      .brand h1{font-size:18px;}
+    }
+
+    .pill{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius: 8px;
+      background:rgba(44, 142, 233, 0.178);
+      color:var(--accent);
+      font-weight:700;
+      margin-bottom: 10px;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="logo">
+        <img src="t-it-logo.png" alt="T-IT">
+        <div class="brand">
+          <h1>T‑IT Company</h1>
+          <p>Решения в области информационных технологий</p>
+        </div>
+      </div>
+
+      <div class="contacts">
+        <div class="phone">+7 701 918 59 94</div>
+        <div class="small">Работаем с 2011 • Быстрая поддержка</div>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="menu">
+        <a href="#">Главная</a>
+        <a href="#services">Услуги</a>
+        <a href="#outsourcing">ИТ‑аутсорсинг</a>
+        <a href="#clients">Нам доверяют</a>
+        <a href="#prices">Наши цены</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+    </nav>
+
+    <div class="card">
+      <section class="hero">
+        <div class="left">
+          <div class="h-top"><span class="pill">О нас</span></div>
+          <h1 class="h-title">T‑IT – Это Динамично Развивающаяся Компания!</h1>
+          <p class="lead">Мы работаем в сфере информационных технологий с 2011 года. Команда квалифицированных инженеров оперативно и качественно решает задачи любой сложности.</p>
+          <a class="cta" href="#contacts">Отправить заявку</a>
+
+          <div style="margin-top:18px">
+            <h3>Миссия</h3>
+            <p style="margin:6px 0 0;color:var(--muted)"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
+          </div>
+        </div>
+
+        <div class="right" aria-hidden="true">
+          <div class="overlay"><h2>Профессиональный IT‑аутсорсинг</h2></div>
+        </div>
+      </section>
+
+      <article class="content">
+        <div id="services">
+          <h3>Ключевые направления</h3>
+          <div class="grid">
+            <div class="service">
+              <h4>ИТ‑аутсорсинг</h4>
+              <p>Поддержка серверов, сетей, рабочих станций и облачных сервисов 24/7.</p>
+            </div>
+            <div class="service">
+              <h4>Разработка ПО</h4>
+              <p>Кастомные решения: веб‑приложения, интеграции и автоматизация бизнес‑процессов.</p>
+            </div>
+            <div class="service">
+              <h4>Кибербезопасность</h4>
+              <p>Аудиты, настройка политик доступа, резервное копирование и восстановление.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="clients" style="margin-top:22px">
+          <h3>Почему выбирают нас?</h3>
+          <ul style="color:var(--muted);">
+            <li>Долгосрочное и эффективное сотрудничество</li>
+            <li>Квалифицированный подход к решению задач</li>
+            <li>Репутация и ориентированность на результат</li>
+          </ul>
+        </div>
+
+        <div id="contacts" style="margin-top:32px; display:flex; flex-wrap:wrap; align-items:flex-start">
+          <div style="flex:1;min-width:220px">
+            <h3>Контакты</h3>
+            <p style="margin:6px 0 0;color:var(--muted)">Телефон: <strong>+7 701 918 59 94</strong> <br>Почта: <strong>t-itcompany@mail.ru</strong> <br>Время работы: Пн–Пт 9:00–18:00 </p>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <h3>Оставить заявку</h3>
+            <form onsubmit="event.preventDefault();alert('Заявка отправлена');" style="display:flex; flex-direction:column; gap:8px">
+              <input required placeholder="Имя" style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,35,0.06)">
+              <input required placeholder="Телефон или email" style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,35,0.06)">
+              <textarea placeholder="Кратко о задаче" rows="3" style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,35,0.06)"></textarea>
+              <button type="submit" style="padding:10px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:700">Отправить</button>
+            </form>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
+    <footer>
+      © 2014 «T-IT»
+    </footer>
+  </div>
+
+</body>
+</html>
