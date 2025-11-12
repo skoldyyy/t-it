@@ -4,228 +4,278 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>T-IT - Комплексное Техническое Обслуживание Компьютеров и IT-Аутсорсинг в Павлодаре</title>
-  <style>
-    :root{
-      --accent:#4a90e2;
-      --dark:#0f1723;
-      --muted:#6b7280;
-      --card:#ffffff;
-      --glass: rgba(255,255,255,0.06);
-      --max-width:1100px;
-      --radius:14px;
-      --shadow: 0 8px 30px rgba(15,23,35,0.18);
-      font-family: Inter, Roboto, Arial, sans-serif;
-    }
-    /* F0E7D5 */
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    *{ box-sizing: border-box; }
+<style>
+:root{
+  --accent:#4a90e2;
+  --accent-2:#6b53e8;
+  --dark:#e6f0ff;
+  --muted:#9aa4bf;
+  --card-dark: rgba(6,12,30,0.62);
+  --card-light: rgba(255,255,255,0.98);
+  --glass: rgba(255,255,255,0.04);
+  --max-width:1100px;
+  --radius:14px;
+  --shadow: 0 12px 40px rgba(2,6,23,0.32);
+  font-family: "Inter", Roboto, Arial, sans-serif;
+  --bg-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><filter id='f'><feTurbulence baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect filter='url(%23f)' width='100%' height='100%' opacity='0.03' fill='white'/></svg>");
+}
 
-    html, body{
-      height:100%;
-      margin:0;
-      background:linear-gradient(180deg,#7291c5 0%, #7373cc 100%);
-      color:var(--dark);
-      
-    }
-    .wrap{
-      max-width:var(--max-width);
-      margin:36px auto;
-      padding:0 20px;
-    }
+/* */
+body{
+  min-height:100vh;
+  margin:0;
+  background-image:
+    radial-gradient(700px 350px at 10% 10%, rgba(255,255,255,0.02), rgba(255,255,255,0) 18%),
+    linear-gradient(180deg, #06102b 0%, #17184a 45%, #2b1b4b 100%),
+    var(--bg-noise);
+  color:var(--dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-    header.header { 
-      display:flex; 
-      align-items:center; 
-      gap:20px; 
-      background:transparent; 
-      padding:18px; 
-      border-radius:12px;
-    }
-    .logo { 
-      display:flex; 
-      align-items:center; 
-      gap:14px;
-    }
-    .logo img { 
-      width:56px; 
-      height:56px; 
-      border-radius:8px; 
-      object-fit:cover; 
-      box-shadow:var(--shadow);
-    }
-    .brand { line-height: 1.5; }
-    .brand h1 { 
-      margin:0; 
-      font-size:20px; 
-      letter-spacing:0.6px;
-    }
-    .brand p { 
-      margin:0; 
-      color:var(--muted); 
-      font-size:13px;
-    }
+.wrap{
+  max-width:var(--max-width);
+  margin:36px auto;
+  padding:20px;
+}
 
-    .contacts { 
-      margin-left:auto; 
-      text-align:right; 
-    }
-    .contacts .phone{
-      font-weight:700;
-      color:var(--dark);
-    }
-    .contacts .small{
-      color:var(--muted);
-      font-size:13px;
-    }
+/* шапка */
+header.header {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 6px 24px rgba(2,6,23,0.18);
+}
+.logo img{
+  width:56px;height:56px;border-radius:10px;object-fit:cover;box-shadow: 0 8px 22px rgba(2,6,23,0.25);
+}
+.brand h1{ margin:0; font-size:20px; color:var(--dark); }
+.brand p{ margin:0; color:var(--muted); font-size:13px; }
 
-    nav.nav{
-      margin-top:18px;
-      background:linear-gradient(180deg, rgba(74,144,226,0.95), rgba(74,144,226,0.9));
-      color: rgba(255, 255, 255, 0.902);
-      padding:10px;
-      border-radius:10px;
-      box-shadow:0 6px 20px rgba(74,144,226,0.12);
-    }
-    nav .menu{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    nav a{
-      color: white;
-      text-decoration:none;
-      font-weight:600;
-      padding:8px 10px;
-      border-radius:8px;
-    }
-    nav a:hover{background:rgba(255,255,255,0.08);}
+/* навигация */
+nav.nav{
+  margin-top:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  color: inherit;
+  padding:10px;
+  border-radius:12px;
+  box-shadow: 0 6px 30px rgba(2,6,23,0.08);
+}
+nav .menu{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+nav a{
+  color: var(--dark);
+  text-decoration:none;
+  font-weight:600;
+  padding:10px 14px;
+  border-radius:10px;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+nav a:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+}
 
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      margin-top:20px;
-    }
-    .hero{
-      display:grid;
-      grid-template-columns:1fr 420px;
-      min-height:340px;
-    }
-    .hero .left{
-      padding:28px 34px;
-      position:relative;
-    }
-    .hero .h-title{
-      font-size:28px;
-      margin:0 0 6px;
-    }
-    .hero p.lead{
-      color:var(--muted);
-      margin:0 0 18px;
-    }
-    .hero .cta{
-      display: inline-block;
-      background:var(--accent);
-      color:white;
-      padding:10px 14px;
-      border-radius:10px;
-      text-decoration: none;
-      font-weight:700;
-      box-shadow:0 6px 16px rgba(74,144,226,0.24)}
+/* Главная секция */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  margin-top:20px;
+  color:var(--dark);
+  border: 1px solid rgba(255,255,255,0.04);
+}
 
-    .hero .right{
-      background-image:url('img/6435b69f-6fca-4d93-aaff-7261a7d06725.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    
-    .hero .overlay{
-      position: absolute;
-      inset: 0;
-      background:linear-gradient(180deg, rgba(15,23,35,0.12), rgba(15,23,35,0.28));
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      color:white;
-      padding: 12px;
-    }
+.card.hero-contrast{
+  background: linear-gradient(180deg, rgba(10,16,34,0.82), rgba(14,22,46,0.72));
+  color: var(--dark);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 14px 50px rgba(2,6,23,0.36);
+}
 
-    .hero .overlay h2{
-      margin:0;
-      padding:12px 22px;
-      background:rgba(0,0,0,0.35);
-      border-radius:8px;
-      text-align: center;
-    }
+body.theme-midnight .card{ color: var(--dark); }
 
-    .content{ padding: 28px 34px }
-    .content h3{ margin-top: 0 }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap: 16px;
-      margin-top: 18px;
-    }
-    .service{
-      background:linear-gradient(180deg,#fafbff,#f3f6fb);
-      padding:18px;
-      border-radius:10px;
-      border:1px solid rgba(15,23,35,0.03);
-    }
-    .service h4{ margin:0 0 8px }
-    .service p{ 
-      margin: 0;
-      color:var(--muted);
-      font-size: 14px;
-    }
+.hero{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  min-height:360px;
+}
+.hero .left{
+  padding:36px 40px;
+  position:relative;
+}
+.h-title{
+  font-size:30px;
+  margin:6px 0 12px;
+  line-height:1.14;
+  color: var(--dark);
+}
+.hero p.lead{
+  color:var(--muted);
+  margin:0 0 18px;
+}
 
-    footer{
-      padding: 18px;
-      text-align:center;
-      color:var(--muted);
-      font-size: 13px;
-    }
+/* Кнопка отправить заявку */
+.hero .cta{
+  display:inline-block;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color:white;
+  padding:12px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow: 0 10px 30px rgba(74,144,226,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.hero .cta:hover{ transform: translateY(-3px); }
 
-    @media (max-width:980px){
-      .hero{ grid-template-columns: 1fr; }
-      .hero .right{ min-height: 220px; }
-      .grid{ grid-template-columns:repeat(2,1fr);}
-    }
-    @media (max-width: 560px){
-      .contacts{display: none;}
-      .grid{grid-template-columns:1fr;}
-      .brand h1{font-size:18px;}
-    }
+/* Картинка справа */
+.hero .right{
+  background-image: url('img/6435b69f-6fca-4d93-aaff-7261a7d06725.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero .overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6,10,30,0.08), rgba(6,10,30,0.26));
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  padding:18px;
+}
+.hero .overlay h2{
+  margin:0;
+  padding:14px 20px;
+  background: rgba(0,0,0,0.38);
+  border-radius:10px;
+  color: #fff;
+  font-weight:700;
+}
 
-    .pill{
-      display:inline-block;
-      padding:6px 12px;
-      border-radius: 8px;
-      background:rgba(44, 142, 233, 0.178);
-      color:var(--accent);
-      font-weight:700;
-      margin-bottom: 10px;
-    }
-  </style>
-  
+/* услуги */
+.content{ padding: 28px 34px; color:var(--dark); }
+.content h3{ margin-top:0 }
+.grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; margin-top:18px; }
+.service{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:18px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.service:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(2,6,23,0.08); }
+.service h4{ color:var(--dark); }
+.service p{ margin:0; color:var(--muted); font-size:14px; }
+
+/* блок контактов (снизу которые) */
+.contacts-block{
+  margin-top:22px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 8px 26px rgba(2,6,23,0.12);
+  color: var(--dark);
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.contacts-block .col{ flex:1; min-width:260px; }
+.contacts-block h3{ margin-top:0; color:var(--dark); }
+
+.contacts-block input, .contacts-block textarea{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(15,23,35,0.06);
+  background: rgba(255,255,255,0.02);
+  color: var(--dark);
+}
+.contacts-block input:focus, .contacts-block textarea:focus{
+  outline:none;
+  box-shadow: 0 10px 30px rgba(74,144,226,0.08);
+  border-color: rgba(74,144,226,0.2);
+}
+.contacts-block button{
+  padding:10px 14px;
+  border-radius:10px;
+  border:0;
+  background:var(--accent);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+}
+
+footer{
+  padding: 18px; text-align:center; color:var(--muted); font-size:13px; margin-top:18px;
+}
+
+/* анимки */
+@media (max-width:980px){
+  .hero{ grid-template-columns: 1fr; }
+  .hero .right{ min-height: 220px; }
+  .grid{ grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width:560px){
+  .contacts{display:none;}
+  .grid{grid-template-columns:1fr;}
+  .brand h1{font-size:18px;}
+  .contacts-block{flex-direction:column;}
+}
+
+/* Штука сверху "о нас" */
+.pill{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius: 8px;
+  background: rgba(74,144,226,0.12);
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom: 10px;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.4s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 <body>
   <div class="wrap">
     <header class="header">
       <div class="logo">
         <img src="img/t-it-logo.png" alt="T-IT">
-        <div class="brand">
-          <h1>T‑IT Company</h1>
+        <div class="brand" style="display:inline-block;margin-left:10px">
+          <h1>T-IT Company</h1>
           <p>Решения в области информационных технологий</p>
         </div>
       </div>
 
-      <div class="contacts">
-        <div class="phone">+7 701 918 59 94</div>
-        <div class="small">Работаем с 2012 • Быстрая поддержка</div>
+      <div class="nav-contacts" style="margin-left:auto;text-align:right">
+        <div class="phone" style="font-weight:700">+7 701 918 59 94</div>
+        <div class="small" style="color:var(--muted)">Работаем с 2012 • Быстрая поддержка</div>
       </div>
     </header>
 
@@ -233,43 +283,43 @@
       <div class="menu">
         <a href="#">Главная</a>
         <a href="#services">Услуги</a>
-        <a href="#outsourcing">ИТ‑аутсорсинг</a>
+        <a href="#outsourcing">ИТ-аутсорсинг</a>
         <a href="#clients">Нам доверяют</a>
         <a href="#prices">Наши цены</a>
         <a href="#contacts">Контакты</a>
       </div>
     </nav>
 
-    <div class="card">
+    <div class="card hero-contrast">
       <section class="hero">
         <div class="left">
           <div class="h-top"><span class="pill">О нас</span></div>
-          <h1 class="h-title">T‑IT – Это Динамично Развивающаяся Компания!</h1>
+          <h1 class="h-title">T-IT – Это Динамично Развивающаяся Компания!</h1>
           <p class="lead">Мы работаем в сфере информационных технологий с 2012 года. Команда квалифицированных инженеров оперативно и качественно решает задачи любой сложности.</p>
           <a class="cta" href="#contacts">Отправить заявку</a>
 
           <div style="margin-top:18px">
-            <h3>Миссия</h3>
+            <h3 style="color:var(--dark)">Миссия</h3>
             <p style="margin:6px 0 0;color:var(--muted)"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
           </div>
         </div>
 
         <div class="right" aria-hidden="true">
-          <div class="overlay"><h2>Профессиональный IT‑аутсорсинг</h2></div>
+          <div class="overlay"><h2>Профессиональный IT-аутсорсинг</h2></div>
         </div>
       </section>
 
       <article class="content">
         <div id="services">
-          <h3>Ключевые направления</h3>
+          <h3 style="color:var(--dark)">Ключевые направления</h3>
           <div class="grid">
             <div class="service">
-              <h4>ИТ‑аутсорсинг</h4>
+              <h4>ИТ-аутсорсинг</h4>
               <p>Поддержка серверов, сетей, рабочих станций и облачных сервисов 24/7.</p>
             </div>
             <div class="service">
               <h4>Разработка ПО</h4>
-              <p>Кастомные решения: веб‑приложения, интеграции и автоматизация бизнес‑процессов.</p>
+              <p>Кастомные решения: веб-приложения, интеграции и автоматизация бизнес-процессов.</p>
             </div>
             <div class="service">
               <h4>Кибербезопасность</h4>
@@ -279,32 +329,36 @@
         </div>
 
         <div id="clients" style="margin-top:22px">
-          <h3>Почему выбирают нас?</h3>
+          <h3 style="color:var(--dark)">Почему выбирают нас?</h3>
           <ul style="color:var(--muted);">
             <li>Долгосрочное и эффективное сотрудничество</li>
             <li>Квалифицированный подход к решению задач</li>
             <li>Репутация и ориентированность на результат</li>
           </ul>
         </div>
-
-        <div id="contacts" style="margin-top:32px; display:flex; flex-wrap:wrap; align-items:flex-start">
-          <div style="flex:1;min-width:220px">
-            <h3>Контакты</h3>
-            <p style="margin:6px 0 0;color:var(--muted)">Телефон: <strong>+7 701 918 59 94</strong> <br>Почта: <strong>t-itcompany@mail.ru</strong> <br>Время работы: Пн–Пт 9:00–18:00 </p>
-          </div>
-          <div style="flex:1;min-width:220px">
-            <h3>Оставить заявку</h3>
-            <form onsubmit="event.preventDefault();alert('Заявка отправлена');" style="display:flex; flex-direction:column; gap:8px">
-              <input required placeholder="Имя" style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,35,0.06)">
-              <input required placeholder="Телефон или email" style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,35,0.06)">
-              <textarea placeholder="Кратко о задаче" rows="3" style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,35,0.06)"></textarea>
-              <button type="submit" style="padding:10px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:700">Отправить</button>
-            </form>
-          </div>
-        </div>
-
       </article>
 
+    </div>
+
+    <div class="contacts-block" id="contacts" role="region" aria-label="Контакты">
+      <div class="col">
+        <h3>Контакты</h3>
+        <p style="margin:6px 0 0;color:var(--muted)">Телефон: <strong style="color:var(--dark)">+7 701 918 59 94</strong><br>
+        Почта: <strong style="color:var(--dark)">t-itcompany@mail.ru</strong><br>
+        Время работы: Пн–Пт 9:00–18:00</p>
+      </div>
+
+      <div class="col" style="max-width:520px;">
+        <h3>Оставить заявку</h3>
+        <form onsubmit="event.preventDefault();alert('Заявка отправлена');" style="display:flex; flex-direction:column; gap:10px; margin-top:6px">
+          <input required placeholder="Имя">
+          <input required placeholder="Телефон или email">
+          <textarea placeholder="Кратко о задаче" rows="3"></textarea>
+          <div style="display:flex; gap:10px; justify-content:flex-end;">
+            <button type="submit">Отправить</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <footer>
@@ -312,5 +366,30 @@
     </footer>
   </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(
+        ".header, .nav, .card.hero-contrast, .service, .contacts-block"
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const delay = [...elements].indexOf(target) * 60;
+                setTimeout(() => target.classList.add("visible"), delay);
+                observer.unobserve(target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    elements.forEach((el) => {
+        el.classList.add("fade-in");
+        observer.observe(el);
+    });
+});
+</script>
 </body>
 </html>
