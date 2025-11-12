@@ -201,7 +201,8 @@ body.theme-midnight .card{ color: var(--dark); }
 .contacts-block h3{ margin-top:0; color:var(--dark); }
 
 .contacts-block input, .contacts-block textarea{
-  width:100%;
+  resize: vertical;
+  width:95%;
   padding:10px;
   border-radius:8px;
   border:1px solid rgba(15,23,35,0.06);
@@ -369,7 +370,7 @@ footer{
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll(
-        ".header, .nav, .card.hero-contrast, .service, .contacts-block"
+        ".header, .nav, .card.hero-contrast, .service, .contacts-block, footer"
     );
 
     const observer = new IntersectionObserver((entries) => {
