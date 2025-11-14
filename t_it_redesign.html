@@ -3,394 +3,479 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>T-IT - Комплексное Техническое Обслуживание Компьютеров и IT-Аутсорсинг в Павлодаре</title>
+  <title>T-IT — Комплексное Техническое Обслуживание и IT-Аутсорсинг</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-900: #050615;
+      --bg-800: #0a1024;
+      --bg-700: #0f1730;
+      --glass: rgba(255,255,255,0.03);
+      --muted: #9aa4bf;
+      --text: #e7eefc;
+      --accent-a: #5fb0ff;
+      --accent-b: #7b61ff;
+      --card-shadow: 0 14px 50px rgba(2,6,23,0.45);
+      --radius:14px;
+      --max-width:1260px;
+      --glass-strong: rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.05);
+      --focus: rgba(95,176,255,0.14);
+    }
 
-<style>
-:root{
-  --accent:#4a90e2;
-  --accent-2:#6b53e8;
-  --dark:#e6f0ff;
-  --muted:#9aa4bf;
-  --card-dark: rgba(6,12,30,0.62);
-  --card-light: rgba(255,255,255,0.98);
-  --glass: rgba(255,255,255,0.04);
-  --max-width:1100px;
-  --radius:14px;
-  --shadow: 0 12px 40px rgba(2,6,23,0.32);
-  font-family: "Inter", Roboto, Arial, sans-serif;
-  --bg-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><filter id='f'><feTurbulence baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect filter='url(%23f)' width='100%' height='100%' opacity='0.03' fill='white'/></svg>");
-}
+    *{box-sizing:border-box}
+    
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(600px 200px at 10% 10%, rgba(123,97,255,0.07), transparent 12%),
+        radial-gradient(500px 220px at 90% 90%, rgba(91,131,255,0.04), transparent 8%),
+        linear-gradient(180deg, var(--bg-900) 0%, var(--bg-700) 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+    }
 
-/* */
-body{
-  min-height:100vh;
-  margin:0;
-  background-image:
-    radial-gradient(700px 350px at 10% 10%, rgba(255,255,255,0.02), rgba(255,255,255,0) 18%),
-    linear-gradient(180deg, #06102b 0%, #17184a 45%, #2b1b4b 100%),
-    var(--bg-noise);
-  color:var(--dark);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      margin:8px auto;
+      display:grid;
+      gap:18px;
+    }
 
-.wrap{
-  max-width:var(--max-width);
-  margin:36px auto;
-  padding:20px;
-}
+    header.header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      padding:14px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid var(--glass-border);
+      box-shadow: 0 8px 26px rgba(2,6,23,0.28);
+      backdrop-filter: blur(8px);
+    }
+    .logo img{ width:56px;height:56px;border-radius:10px;object-fit:cover; }
+    .brand{ display:flex; flex-direction:column; gap:2px;}
+    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text); }
+    .brand p{ margin:0; font-size:12px; color:var(--muted); }
 
-/* шапка */
-header.header {
-  display:flex;
-  align-items:center;
-  gap:20px;
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(6px);
-  padding:18px;
-  border-radius:12px;
-  box-shadow: 0 6px 24px rgba(2,6,23,0.18);
-}
-.logo img{
-  width:56px;height:56px;border-radius:10px;object-fit:cover;box-shadow: 0 8px 22px rgba(2,6,23,0.25);
-}
-.brand h1{ margin:0; font-size:20px; color:var(--dark); }
-.brand p{ margin:0; color:var(--muted); font-size:13px; }
+    .nav-contacts{ margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; }
+    .nav-contacts .phone{ font-weight:700; color:var(--text); }
+    .nav-contacts .small{ font-size:12px; color:var(--muted); }
 
-/* навигация */
-nav.nav{
-  margin-top:18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  color: inherit;
-  padding:10px;
-  border-radius:12px;
-  box-shadow: 0 6px 30px rgba(2,6,23,0.08);
-}
-nav .menu{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-nav a{
-  color: var(--dark);
-  text-decoration:none;
-  font-weight:600;
-  padding:10px 14px;
-  border-radius:10px;
-  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
-}
-nav a:hover{
-  transform: translateY(-3px);
-  background: rgba(255,255,255,0.04);
-  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
-}
+    /* переключатель тем */
+    .controls{ display:flex; gap:8px; align-items:center; margin-left:12px; }
+    .theme-toggle{
+      padding:8px 10px; border-radius:10px; cursor:pointer; border:0;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      color:var(--muted); font-weight:700; font-size:13px;
+    }
 
-/* Главная секция */
-.card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-  margin-top:20px;
-  color:var(--dark);
-  border: 1px solid rgba(255,255,255,0.04);
-}
+    /* навигация */
+    nav.nav{
+      display:flex; align-items:center;
+      padding:10px; border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.014), rgba(255,255,255,0.006));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+        .menu{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .menu a, .menu .nav-link {
+      color:var(--muted); text-decoration:none; padding:10px 14px; border-radius:10px;
+      font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:8px;
+      transition: all .14s ease;
+      background: transparent; border: 0;
+    }
+    .menu a:hover, .menu .nav-link:hover,
+    .menu a:focus, .menu .nav-link:focus { color:var(--text); transform:translateY(-3px); background:rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
 
-.card.hero-contrast{
-  background: linear-gradient(180deg, rgba(10,16,34,0.82), rgba(14,22,46,0.72));
-  color: var(--dark);
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 14px 50px rgba(2,6,23,0.36);
-}
+    .dropdown { position: relative; display:inline-block; }
+    .dropdown-toggle {
+      --pad-x:12px;
+      padding:10px var(--pad-x); border-radius:10px; cursor:pointer; user-select:none;
+      color:var(--muted); background:transparent; border:0; font-weight:600; font-size:14px;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .dropdown-toggle:hover, .dropdown-toggle:focus { color:var(--text); background:rgba(255,255,255,0.02); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
+    .dropdown-toggle .chev {
+      display:inline-block; transition: transform .18s ease; font-size:12px; color:var(--muted);
+    }
 
-body.theme-midnight .card{ color: var(--dark); }
+    .dropdown.open .dropdown-toggle .chev { transform: rotate(180deg); color:var(--text); }
 
-.hero{
-  display:grid;
-  grid-template-columns:1fr 420px;
-  min-height:360px;
-}
-.hero .left{
-  padding:36px 40px;
-  position:relative;
-}
-.h-title{
-  font-size:30px;
-  margin:6px 0 12px;
-  line-height:1.14;
-  color: var(--dark);
-}
-.hero p.lead{
-  color:var(--muted);
-  margin:0 0 18px;
-}
+    .dropdown-menu {
+      position:absolute; top:calc(100% + 10px); left:0; min-width:220px;
+      border-radius:10px; padding:8px; background: linear-gradient(180deg, rgba(6,10,30,0.94), rgba(10,14,34,0.98));
+      border:1px solid rgba(255,255,255,0.04); box-shadow: 0 18px 50px rgba(2,6,23,0.5);
+      opacity:0; transform: translateY(8px); pointer-events:none; transition: opacity .18s ease, transform .18s ease;
+      z-index:120;
+    }
+    .dropdown-menu a {
+      display:block; padding:10px 12px; border-radius:8px; color:var(--muted); text-decoration:none; font-weight:600;
+      transition: background .12s ease, color .12s ease;
+    }
+    .dropdown-menu a:hover, .dropdown-menu a:focus { background: rgba(255,255,255,0.02); color:var(--text); outline:none; }
 
-/* Кнопка отправить заявку */
-.hero .cta{
-  display:inline-block;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color:white;
-  padding:12px 16px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:800;
-  box-shadow: 0 10px 30px rgba(74,144,226,0.12);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.hero .cta:hover{ transform: translateY(-3px); }
+    .dropdown:hover .dropdown-menu,
+    .dropdown.open .dropdown-menu {
+      opacity:1; transform: translateY(0); pointer-events:auto;
+    }
 
-/* Картинка справа */
-.hero .right{
-  background-image: url('img/6435b69f-6fca-4d93-aaff-7261a7d06725.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.hero .overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(6,10,30,0.08), rgba(6,10,30,0.26));
-  display:flex;
-  align-items:flex-end;
-  justify-content:flex-end;
-  padding:18px;
-}
-.hero .overlay h2{
-  margin:0;
-  padding:14px 20px;
-  background: rgba(0,0,0,0.38);
-  border-radius:10px;
-  color: #fff;
-  font-weight:700;
-}
+    .card{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--glass-border);
+      box-shadow: var(--card-shadow);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
 
-/* услуги */
-.content{ padding: 28px 34px; color:var(--dark); }
-.content h3{ margin-top:0 }
-.grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; margin-top:18px; }
-.service{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  padding:18px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
-  transition: transform .14s ease, box-shadow .14s ease;
-}
-.service:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(2,6,23,0.08); }
-.service h4{ color:var(--dark); }
-.service p{ margin:0; color:var(--muted); font-size:14px; }
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:0;
+      min-height:400px;
+    }
 
-/* блок контактов (снизу которые) */
-.contacts-block{
-  margin-top:22px;
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(6px);
-  padding:18px;
-  border-radius:12px;
-  box-shadow: 0 8px 26px rgba(2,6,23,0.12);
-  color: var(--dark);
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+    .hero-left{
+      padding:40px 44px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:18px;
+    }
 
-.contacts-block .col{ flex:1; min-width:260px; }
-.contacts-block h3{ margin-top:0; color:var(--dark); }
+    .pill{
+      display:inline-block; padding:6px 12px; border-radius:999px;
+      background: linear-gradient(90deg, rgba(95,176,255,0.12), rgba(123,97,255,0.08));
+      color:var(--accent-a); font-weight:700; font-size:13px;
+      box-shadow: 0 6px 18px rgba(95,176,255,0.04);
+    }
 
-.contacts-block input, .contacts-block textarea{
-  resize: vertical;
-  width:95%;
-  padding:10px;
-  border-radius:8px;
-  border:1px solid rgba(15,23,35,0.06);
-  background: rgba(255,255,255,0.02);
-  color: var(--dark);
-}
-.contacts-block input:focus, .contacts-block textarea:focus{
-  outline:none;
-  box-shadow: 0 10px 30px rgba(74,144,226,0.08);
-  border-color: rgba(74,144,226,0.2);
-}
-.contacts-block button{
-  padding:10px 14px;
-  border-radius:10px;
-  border:0;
-  background:var(--accent);
-  color:white;
-  font-weight:700;
-  cursor:pointer;
-}
+    h1.h-title{
+      margin:0; font-size:34px; line-height:1.05; color:var(--text); letter-spacing:-0.2px;
+      text-shadow: 0 6px 30px rgba(2,6,23,0.6);
+    }
 
-footer{
-  padding: 18px; text-align:center; color:var(--muted); font-size:13px; margin-top:18px;
-}
+    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:70ch; }
 
-/* анимки */
-@media (max-width:980px){
-  .hero{ grid-template-columns: 1fr; }
-  .hero .right{ min-height: 220px; }
-  .grid{ grid-template-columns: repeat(2,1fr); }
-}
-@media (max-width:560px){
-  .contacts{display:none;}
-  .grid{grid-template-columns:1fr;}
-  .brand h1{font-size:18px;}
-  .contacts-block{flex-direction:column;}
-}
+    .cta-row{ display:flex; gap:12px; align-items:center; margin-top:6px; flex-wrap:wrap; }
+    .btn-cta{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 16px; border-radius:12px; border:0;
+      background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+      color:white; font-weight:800; cursor:pointer; text-decoration:none;
+      box-shadow: 0 14px 40px rgba(91,131,255,0.12);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .btn-cta:hover{ transform: translateY(-4px); box-shadow: 0 20px 60px rgba(91,131,255,0.16); }
 
-/* Штука сверху "о нас" */
-.pill{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius: 8px;
-  background: rgba(74,144,226,0.12);
-  color:var(--accent);
-  font-weight:700;
-  margin-bottom: 10px;
-}
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease-out, transform 0.4s ease-out;
-}
+    .ghost{
+      padding:10px 12px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.04);
+      color:var(--muted); font-weight:700; cursor: pointer;
+    }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
+    /* картинка справа */
+    .hero-right{
+      position:relative;
+      min-height:100%;
+      background-image: url('img/6435b69f-6fca-4d93-aaff-7261a7d06725.jpg');
+      background-size:cover; background-position:center;
+    }
+    .hero-right::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(2,6,23,0.12), rgba(2,6,23,0.42));
+      mix-blend-mode:multiply;
+    }
+    .hero-cta-wrap{
+      position:absolute; right:50px; bottom:18px;
+    }
+    .hero-badge{
+      padding:14px 18px; border-radius:12px; color:white; font-weight:800;
+      background: linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+      backdrop-filter: blur(6px);
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.35);
+      max-width:330px;
+      display: flex;
+    }
+
+    .content{
+      padding:28px 34px; background:transparent;
+    }
+    .content h3{ margin:0 0 8px 0; color:var(--text); }
+    .grid{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:14px;
+    }
+    .service{
+      padding:18px; border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));
+      border:1px solid rgba(255,255,255,0.02);
+      transition: transform .14s ease, box-shadow .14s ease;
+    }
+    .service:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(2,6,23,0.24); }
+    .service h4{ margin:0 0 8px 0; color:var(--text); font-size:16px; }
+    .service p{ margin:0; color:var(--muted); font-size:14px; }
+
+    .contacts-block{
+      display:flex; gap:20px; align-items:flex-start; justify-content:space-between;
+      padding:18px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));
+      border:1px solid rgba(255,255,255,0.02); backdrop-filter: blur(6px);
+    }
+    .contacts-block .col{ flex:1; min-width:260px; }
+    .contacts-block h3{ margin:0 0 8px 0; color:var(--text); }
+    .contacts-block p{ margin:0; color:var(--muted); }
+
+    .form input, .form textarea{
+      width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.02); color:var(--text); font-size:14px;
+      transition: box-shadow .14s ease, border-color .14s ease;
+    }
+    .form input:focus, .form textarea:focus{
+      outline:none; box-shadow: 0 10px 30px var(--focus); border-color: rgba(95,176,255,0.22);
+    }
+    .form .submit{
+      display:inline-block; margin-left:auto; margin-top:4px; padding:10px 14px; border-radius:10px;
+      border:0; background: linear-gradient(90deg,var(--accent-a),var(--accent-b)); color:white; font-weight:700; cursor:pointer;
+    }
+
+    footer{
+      text-align:center; color:var(--muted); font-size:13px; padding:12px;
+    }
+
+    /* для маленьких экранов */
+    @media (max-width:980px){
+      .hero{ grid-template-columns: 1fr; }
+      .hero-right{ min-height:220px; order: -1; }
+      .grid{ grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width:620px){
+      .wrap{ padding:0 12px; }
+      .menu a{ padding:8px 10px; font-size:13px; }
+      .grid{ grid-template-columns: 1fr; }
+      .brand h1{ font-size:16px; }
+    }
+    @media (max-width:980px){
+      .menu{ display:block; }
+      .menu a, .dropdown-toggle{ display:block; width:100%; padding:12px; }
+      .dropdown-menu{ position:static; transform:none; opacity:1; pointer-events:auto; margin-top:8px; box-shadow:none; border:1px solid rgba(255,255,255,0.02); }
+      .dropdown { width:100%; }
+    }
+
+    /* анимка при входе */
+    .fade-up{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-up.show{ opacity:1; transform: translateY(0); }
+
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="header">
-      <div class="logo">
-        <img src="img/t-it-logo.png" alt="T-IT">
-        <div class="brand" style="display:inline-block;margin-left:10px">
+  <div class="wrap" role="main">
+    <header class="header fade-up" id="siteHeader">
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="logo" aria-hidden="true">
+          <img src="img/t-it-logo.png" alt="T-IT logo">
+        </div>
+        <div class="brand">
           <h1>T-IT Company</h1>
           <p>Решения в области информационных технологий</p>
         </div>
       </div>
 
-      <div class="nav-contacts" style="margin-left:auto;text-align:right">
-        <div class="phone" style="font-weight:700">+7 701 918 59 94</div>
-        <div class="small" style="color:var(--muted)">Работаем с 2012 • Быстрая поддержка</div>
+      <div class="nav-contacts" aria-hidden="false">
+        <div class="phone">+7 701 918 59 94</div>
+        <div class="small">Работаем с 2012 • Быстрая поддержка</div>
+      </div>
+
+      <div class="controls" aria-hidden="true">
+        <button class="theme-toggle" id="themeToggle">Ночной режим</button>
       </div>
     </header>
 
-    <nav class="nav">
-      <div class="menu">
-        <a href="#">Главная</a>
-        <a href="#services">Услуги</a>
-        <a href="#outsourcing">ИТ-аутсорсинг</a>
-        <a href="#clients">Нам доверяют</a>
-        <a href="#prices">Наши цены</a>
-        <a href="#contacts">Контакты</a>
-      </div>
-    </nav>
+    <div class="menu" role="navigation" aria-label="Основное меню">
+  <a href="#">Главная</a>
 
-    <div class="card hero-contrast">
-      <section class="hero">
-        <div class="left">
-          <div class="h-top"><span class="pill">О нас</span></div>
-          <h1 class="h-title">T-IT – Это Динамично Развивающаяся Компания!</h1>
-          <p class="lead">Мы работаем в сфере информационных технологий с 2012 года. Команда квалифицированных инженеров оперативно и качественно решает задачи любой сложности.</p>
-          <a class="cta" href="#contacts">Отправить заявку</a>
+  <div class="dropdown" id="navServices">
+    <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle">
+      Услуги
+    </button>
 
-          <div style="margin-top:18px">
-            <h3 style="color:var(--dark)">Миссия</h3>
-            <p style="margin:6px 0 0;color:var(--muted)"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
+    <div class="dropdown-menu" id="servicesMenu" role="menu" aria-labelledby="servicesToggle">
+            <a href="#repair-laptops" role="menuitem" tabindex="0">Ремонт ноутбуков</a>
+            <a href="#repair-printers" role="menuitem" tabindex="0">Ремонт принтеров</a>
+            <a href="#cartridge-replace" role="menuitem" tabindex="0">Замена картриджей</a>
           </div>
         </div>
 
-        <div class="right" aria-hidden="true">
-          <div class="overlay"><h2>Профессиональный IT-аутсорсинг</h2></div>
-        </div>
-      </section>
+  <a href="#outsourcing">ИТ-аутсорсинг</a>
+  <a href="#clients">Нам доверяют</a>
+  <a href="#prices">Наши цены</a>
+  <a href="#contacts">Контакты</a>
+</div>
 
-      <article class="content">
-        <div id="services">
-          <h3 style="color:var(--dark)">Ключевые направления</h3>
-          <div class="grid">
-            <div class="service">
-              <h4>ИТ-аутсорсинг</h4>
-              <p>Поддержка серверов, сетей, рабочих станций и облачных сервисов 24/7.</p>
-            </div>
-            <div class="service">
-              <h4>Разработка ПО</h4>
-              <p>Кастомные решения: веб-приложения, интеграции и автоматизация бизнес-процессов.</p>
-            </div>
-            <div class="service">
-              <h4>Кибербезопасность</h4>
-              <p>Аудиты, настройка политик доступа, резервное копирование и восстановление.</p>
-            </div>
+    <section class="card hero fade-up" id="heroCard" aria-labelledby="heroTitle">
+      <div class="hero-left">
+        <span class="pill">О нас</span>
+        <h1 id="heroTitle" class="h-title">T-IT — динамично развивающаяся IT-компания</h1>
+        <p class="lead">С 2012 года мы повышаем эффективность бизнеса клиентов: серверы, сети, облака, безопасность и кастомные решения. Быстро, профессионально и с вниманием к результату.</p>
+
+        <div class="cta-row">
+          <a class="btn-cta" href="#contacts">Отправить заявку</a>
+          <button class="ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Наши услуги</button>
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:12px; align-items:flex-start;">
+          <div style="min-width:0">
+            <h3 style="margin:0 0 6px 0; font-size:15px; color:var(--text)">Миссия</h3>
+            <p style="margin:0;color:var(--muted);font-size:14px;max-width:58ch"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-cta-wrap">
+          <div class="hero-badge">Профессиональный IT-аутсорсинг</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card fade-up" style="overflow:visible;">
+      <div class="content" id="services">
+        <h3>Ключевые направления</h3>
+        <div class="grid" style="margin-top:12px;">
+          <div class="service">
+            <h4>ИТ-аутсорсинг</h4>
+            <p>Поддержка серверов, сетей, рабочих станций и облачных сервисов 24/7.</p>
+          </div>
+          <div class="service">
+            <h4>Разработка ПО</h4>
+            <p>Кастомные решения: веб-приложения, интеграции и автоматизация бизнес-процессов.</p>
+          </div>
+          <div class="service">
+            <h4>Кибербезопасность</h4>
+            <p>Аудиты, настройка политик доступа, резервное копирование и восстановление.</p>
           </div>
         </div>
 
         <div id="clients" style="margin-top:22px">
-          <h3 style="color:var(--dark)">Почему выбирают нас?</h3>
-          <ul style="color:var(--muted);">
+          <h3>Почему выбирают нас?</h3>
+          <ul style="color:var(--muted); margin-top:8px; padding-left:18px;">
             <li>Долгосрочное и эффективное сотрудничество</li>
             <li>Квалифицированный подход к решению задач</li>
             <li>Репутация и ориентированность на результат</li>
           </ul>
         </div>
-      </article>
+      </div>
+    </section>
 
-    </div>
-
-    <div class="contacts-block" id="contacts" role="region" aria-label="Контакты">
+    <section class="contacts-block fade-up" id="contacts" role="region" aria-label="Контакты">
       <div class="col">
         <h3>Контакты</h3>
-        <p style="margin:6px 0 0;color:var(--muted)">Телефон: <strong style="color:var(--dark)">+7 701 918 59 94</strong><br>
-        Почта: <strong style="color:var(--dark)">t-itcompany@mail.ru</strong><br>
+        <p>Телефон: <strong style="color:var(--text)">+7 701 918 59 94</strong><br>
+        Почта: <strong style="color:var(--text)">t-itcompany@mail.ru</strong><br>
         Время работы: Пн–Пт 9:00–18:00</p>
       </div>
 
       <div class="col" style="max-width:520px;">
         <h3>Оставить заявку</h3>
-        <form onsubmit="event.preventDefault();alert('Заявка отправлена');" style="display:flex; flex-direction:column; gap:10px; margin-top:6px">
-          <input required placeholder="Имя">
-          <input required placeholder="Телефон или email">
-          <textarea placeholder="Кратко о задаче" rows="3"></textarea>
-          <div style="display:flex; gap:10px; justify-content:flex-end;">
-            <button type="submit">Отправить</button>
+        <form class="form" onsubmit="event.preventDefault(); alert('Заявка отправлена — замените этот обработчик на ваш бекенд');" style="margin-top:8px;">
+          <input required placeholder="Имя" aria-label="Имя">
+          <div style="height:8px"></div>
+          <input required placeholder="Телефон или email" aria-label="Телефон или email">
+          <div style="height:8px"></div>
+          <textarea placeholder="Кратко о задаче" rows="3" aria-label="Кратко о задаче"></textarea>
+          <div style="display:flex; justify-content:flex-end; margin-top:8px;">
+            <button class="submit" type="submit">Отправить</button>
           </div>
         </form>
       </div>
-    </div>
+    </section>
 
-    <footer>
-      © 2012 «T-IT»
-    </footer>
+    <footer class="fade-up">© 2012 «T-IT»</footer>
   </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(
-        ".header, .nav, .card.hero-contrast, .service, .contacts-block, footer"
-    );
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const delay = [...elements].indexOf(target) * 60;
-                setTimeout(() => target.classList.add("visible"), delay);
-                observer.unobserve(target);
-            }
-        });
-    }, {
-        threshold: 0.15
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fade-up').forEach((el,i) => {
+        setTimeout(()=> el.classList.add('show'), 80*i);
+      });
+      const toggle = document.getElementById('themeToggle');
+      let dark = true;
+      toggle.addEventListener('click', () => {
+        dark = !dark;
+        if(!dark){
+          document.documentElement.style.setProperty('--bg-900','#0e0e12');
+          document.documentElement.style.setProperty('--bg-700','#111218');
+          document.documentElement.style.setProperty('--accent-a','#ff8a65');
+          document.documentElement.style.setProperty('--accent-b','#ff5e9e');
+          toggle.textContent = 'Тёмный режим';
+        } else {
+          document.documentElement.style.setProperty('--bg-900','#050615');
+          document.documentElement.style.setProperty('--bg-700','#0f1730');
+          document.documentElement.style.setProperty('--accent-a','#5fb0ff');
+          document.documentElement.style.setProperty('--accent-b','#7b61ff');
+          toggle.textContent = 'Ночной режим';
+        }
+      });
     });
+  </script>
+    <script>
+    function isTouchDevice(){
+      return (('ontouchstart' in window) || navigator.maxTouchPoints > 0);
+    }
 
-    elements.forEach((el) => {
-        el.classList.add("fade-in");
-        observer.observe(el);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fade-up').forEach((el,i) => setTimeout(()=> el.classList.add('show'), 80*i));
+
+      const dropdown = document.getElementById('navServices');
+      const toggle = document.getElementById('servicesToggle');
+      const menu = document.getElementById('servicesMenu');
+      let leaveTimer = null;
+
+      dropdown.addEventListener('mouseenter', () => {
+        clearTimeout(leaveTimer);
+        dropdown.classList.add('open');
+        toggle.setAttribute('aria-expanded','true');
+      });
+      dropdown.addEventListener('mouseleave', () => {
+        leaveTimer = setTimeout(() => {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        }, Number(dropdown.dataset.timeout) || 200);
+      });
+
+      toggle.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        clearTimeout(leaveTimer);
+        const open = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      menu.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+      });
+
+      document.addEventListener('click', (ev) => {
+        if (!dropdown.contains(ev.target)) {
+          dropdown.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        }
+      });
+
+      if (isTouchDevice()) {
+        document.addEventListener('touchstart', (ev) => {
+          if (!dropdown.contains(ev.target)) {
+            dropdown.classList.remove('open');
+            toggle.setAttribute('aria-expanded','false');
+          }
+        }, {passive:true});
+      }
     });
-});
-</script>
+  </script>
 </body>
 </html>
