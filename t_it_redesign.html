@@ -346,30 +346,30 @@
 
     <section class="card fade-up" style="overflow:visible;">
       <div class="content" id="services">
-        <h3>Ключевые направления</h3>
+        <h3>Основные направления</h3>
         <div class="grid" style="margin-top:12px;">
           <div class="service">
-            <h4>ИТ-аутсорсинг</h4>
-            <p>Поддержка серверов, сетей, рабочих станций и облачных сервисов 24/7.</p>
+            <h4>Ремонт техники и монтаж сетей</h4>
+            <p>Ремонтируем компьютеры и ноутбуки в нашем офисе или у вас на дому, а так же настраиваем и прокладываем надежные локальные сети под ключ.</p>
           </div>
           <div class="service">
-            <h4>Разработка ПО</h4>
-            <p>Кастомные решения: веб-приложения, интеграции и автоматизация бизнес-процессов.</p>
+            <h4>Обслуживание компаний</h4>
+            <p>Полное техническое сопровождение бизнеса: поддержка офисной техники, серверов, рабочих мест и сетевой инфраструктуры.</p>
           </div>
           <div class="service">
-            <h4>Кибербезопасность</h4>
-            <p>Аудиты, настройка политик доступа, резервное копирование и восстановление.</p>
+            <h4>Помощь в покупке</h4>
+            <p>Поможем подобрать оборудование под ваши задачи и бюджет, соберём ПК, настроим и подготовим технику к работе.</p>
           </div>
         </div>
 
-        <div id="clients" style="margin-top:22px">
+        <!-- <div id="clients" style="margin-top:22px">
           <h3>Почему выбирают нас?</h3>
           <ul style="color:var(--muted); margin-top:8px; padding-left:18px;">
             <li>Долгосрочное и эффективное сотрудничество</li>
             <li>Квалифицированный подход к решению задач</li>
             <li>Репутация и ориентированность на результат</li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -405,22 +405,37 @@
         setTimeout(()=> el.classList.add('show'), 80*i);
       });
       const toggle = document.getElementById('themeToggle');
-      let dark = true;
-      toggle.addEventListener('click', () => {
-        dark = !dark;
-        if(!dark){
-          document.documentElement.style.setProperty('--bg-900','#0e0e12');
-          document.documentElement.style.setProperty('--bg-700','#111218');
-          document.documentElement.style.setProperty('--accent-a','#ff8a65');
-          document.documentElement.style.setProperty('--accent-b','#ff5e9e');
-          toggle.textContent = 'Тёмный режим';
-        } else {
+
+      
+      let dark = localStorage.getItem('theme') === 'dark' ? true : false;
+
+      
+      function applyTheme() {
+        if (dark) {
+          // Ночная тема
           document.documentElement.style.setProperty('--bg-900','#050615');
           document.documentElement.style.setProperty('--bg-700','#0f1730');
           document.documentElement.style.setProperty('--accent-a','#5fb0ff');
           document.documentElement.style.setProperty('--accent-b','#7b61ff');
           toggle.textContent = 'Ночной режим';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          // Тёмная тема
+          document.documentElement.style.setProperty('--bg-900','#0e0e12');
+          document.documentElement.style.setProperty('--bg-700','#111218');
+          document.documentElement.style.setProperty('--accent-a','#ff8a65');
+          document.documentElement.style.setProperty('--accent-b','#ff5e9e');
+          toggle.textContent = 'Тёмный режим';
+          localStorage.setItem('theme', 'light');
         }
+      }
+
+      
+      applyTheme();
+
+      toggle.addEventListener('click', () => {
+        dark = !dark;
+        applyTheme();
       });
     });
   </script>
