@@ -236,6 +236,7 @@
       width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
       background: rgba(255,255,255,0.02); color:var(--text); font-size:14px;
       transition: box-shadow .14s ease, border-color .14s ease;
+      resize: vertical;
     }
     .form input:focus, .form textarea:focus{
       outline:none; box-shadow: 0 10px 30px var(--focus); border-color: rgba(95,176,255,0.22);
@@ -248,6 +249,7 @@
     footer{
       text-align:center; color:var(--muted); font-size:13px; padding:12px;
     }
+
 
     /* для маленьких экранов */
     @media (max-width:980px){
@@ -350,11 +352,11 @@
         <div class="grid" style="margin-top:12px;">
           <div class="service">
             <h4>Ремонт техники и монтаж сетей</h4>
-            <p>Ремонтируем компьютеры и ноутбуки в нашем офисе или у вас на дому, а так же настраиваем и прокладываем надежные локальные сети под ключ.</p>
+            <p>Ремонтируем компьютеры и ноутбуки в нашем сервисном центре, а так же настраиваем и прокладываем надежные локальные сети под ключ.</p>
           </div>
           <div class="service">
             <h4>Обслуживание компаний</h4>
-            <p>Полное техническое сопровождение бизнеса: поддержка офисной техники, серверов, рабочих мест и сетевой инфраструктуры.</p>
+            <p>Поддержка офисной техники и сетевого оборудования. Удаленное администрирование и выезд к клиенту.</p>
           </div>
           <div class="service">
             <h4>Помощь в покупке</h4>
@@ -378,20 +380,12 @@
         <h3>Контакты</h3>
         <p>Телефон: <strong style="color:var(--text)">+7 701 918 59 94</strong><br>
         Почта: <strong style="color:var(--text)">t-itcompany@mail.ru</strong><br>
-        Время работы: Пн–Пт 9:00–18:00</p>
+        Время работы: Пн–Пт 9:00–18:00. Улица Академика Сатпаева, 46​6 офис; 1 этаж; правое крыло</p>
       </div>
 
-      <div class="col" style="max-width:520px;">
-        <h3>Оставить заявку</h3>
-        <form class="form" onsubmit="event.preventDefault(); alert('Заявка отправлена — замените этот обработчик на ваш бекенд');" style="margin-top:8px;">
-          <input required placeholder="Имя" aria-label="Имя">
-          <div style="height:8px"></div>
-          <input required placeholder="Телефон или email" aria-label="Телефон или email">
-          <div style="height:8px"></div>
-          <textarea placeholder="Кратко о задаче" rows="3" aria-label="Кратко о задаче"></textarea>
-          <div style="display:flex; justify-content:flex-end; margin-top:8px;">
-            <button class="submit" type="submit">Отправить</button>
-          </div>
+      <!-- ЗДЕСЬ ДОЛЖНА БЫТЬ КАРТА -->
+
+      
         </form>
       </div>
     </section>
@@ -399,6 +393,7 @@
     <footer class="fade-up">© 2012 «T-IT»</footer>
   </div>
 
+  <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.fade-up').forEach((el,i) => {
