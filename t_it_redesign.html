@@ -419,7 +419,7 @@
   height="260"
   frameborder="0"
   style="border:0; border-radius:12px; overflow:hidden;"
-  src="https://www.google.com/maps?q=43.23513,76.90135&z=16&output=embed"
+  src="https://www.google.com/maps?q=52.288891703060415,76.94001087225888&z=16&output=embed"
   allowfullscreen
   aria-hidden="false">
 </iframe>
@@ -427,7 +427,7 @@
     <!-- overlay с адресом и кнопками -->
     <div class="map-overlay" aria-hidden="false">
       <div class="addr">
-        <strong>T-IT — офис</strong>
+        <strong>Сервисный Центр T-IT </strong>
         <div>Ул. Академика Сатпаева, 46</div>
         <div style="font-size:12px;color:var(--muted);margin-top:4px;">Пн–Пт 9:00–18:00</div>
       </div>
@@ -443,10 +443,10 @@
     <section class="contacts-block fade-up" id="contacts" role="region" aria-label="Контакты">
       <div class="col">
         <h3>Контакты</h3>
-        <p>Телефон: <strong style="color:var(--text)">+7 701 918 59 94,+7 701 916 55 88</strong><br>
+        <p>Телефон: <strong style="color:var(--text)">+7 701 918 59 94, +7 701 916 55 88</strong><br>
         Почта: <strong style="color:var(--text)">t-itcompany@mail.ru</strong><br>
         Время работы: Пн–Пт 9:00–18:00</p>
-        <br>Улица Академика Сатпаева, 46​6 офис; 1 этаж; правое крыло </br>
+        <br><strong style="color:var(--text)">Улица Академика Сатпаева, 46​6 офис; 1 этаж; правое крыло </strong><br>
     
       </div>
     <footer class="fade-up">© 2012 «T-IT»</footer>
@@ -460,7 +460,6 @@
   const GM_LAT = 52.288891703060415;
   const GM_LNG = 76.94001087225888;
 
-  // Вставьте найденный Place ID сюда
   const PLACE_ID = "ChIJsaLHeCk1-EIRGxPL-B_b5ck";
 
   function initMap() {
@@ -500,10 +499,10 @@
 
       // маршрут
       directionsBtn.addEventListener('click', () => {
-        const url =
-          `https://www.google.com/maps/dir/?api=1&destination_place_id=${PLACE_ID}`;
-        window.open(url, '_blank', 'noopener');
-      });
+  const destination = encodeURIComponent('Компания T-IT сервисный центр, Павлодар');
+  const url = `https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${destination}`;
+  window.open(url, '_blank', 'noopener');
+});
 
     } catch (err) {
       console.error('Ошибка инициализации Google Maps:', err);
