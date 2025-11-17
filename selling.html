@@ -335,30 +335,7 @@
       border-radius: 1px;
       transition: all .2s ease;
     }
-
-    /* стиль для активной позиции меню */
-.menu a.active,
-.menu .nav-link.active,
-.dropdown-toggle.active {
-  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
-  color: #fff;
-  transform: none;
-  box-shadow: 0 10px 30px rgba(91,131,255,0.14);
-  cursor: default;
-  pointer-events: none; /* дополнительно блокирует клики */
-}
-
-/* если вы хотите, чтобы внутри mobile menu поведение было то же самое */
-.menu.open a.active,
-.menu.open .nav-link.active {
-  pointer-events: none;
-}
-
-/* адаптив: чтобы ссылка не выглядела как фокусируемая кнопка (опционально) */
-.menu a.active:focus {
-  outline: none;
-  box-shadow: none;
-}
+    
     .nav-toggle span + span { margin-top: 5px; }
     .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav-toggle.active span:nth-child(2) { opacity: 0; }
