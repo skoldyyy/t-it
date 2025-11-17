@@ -41,6 +41,7 @@
       padding:28px;
       display:flex;
       justify-content:center;
+      background-repeat: no-repeat;
     }
 
     .wrap{
@@ -68,9 +69,14 @@
     .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text); }
     .brand p{ margin:0; font-size:12px; color:var(--muted); }
 
-    .nav-contacts{ margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; }
-    .nav-contacts .phone{ font-weight:700; color:var(--text); }
+    .nav-contacts{ margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
+    .nav-contacts .phone{ font-weight:700; color:var(--text); display:inline-flex; align-items:center; gap:8px; }
     .nav-contacts .small{ font-size:12px; color:var(--muted); }
+
+    /* whatsapp icon style */
+    .wh-icon { width:18px; height:18px; display:inline-block; vertical-align:middle; }
+    .wh-link { color:var(--text); text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
+    .wh-link:hover, .wh-link:focus { text-decoration:none; opacity:0.95; transform:translateY(-2px); }
 
     /* переключатель тем */
     .controls{ display:flex; gap:8px; align-items:center; margin-left:12px; }
@@ -414,7 +420,7 @@
       .wrap { gap: 16px; margin: 0 auto; }
 
       .header { flex-wrap: wrap; gap: 12px; padding: 12px; }
-      .nav-contacts { order: 3; width: 100%; text-align: left; margin-top: 8px; }
+      .nav-contacts { order: 3; width: 100%; text-align: left; margin-top: 8px; align-items:flex-start; }
       .controls { margin-left: 0; }
 
       .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -471,7 +477,10 @@
       </div>
 
       <div class="nav-contacts" aria-hidden="false">
-        <div class="phone">+7 701 918 59 94</div>
+        <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+          <span><strong>+7 701 918 59 94</strong></span>
+          <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async"> 
+        </a>
         <div class="small">Работаем с 2012 • Быстрая поддержка</div>
       </div>
 
@@ -506,6 +515,7 @@
         <a href="#contacts">Контакты</a>
         <a href="#address">Адрес</a>
         <a href="selling.html">Продажа компьютеров</a>
+        
       </div>
     </div>
 
@@ -582,8 +592,15 @@
     <section class="contacts-block fade-up" id="contacts" role="region" aria-label="Контакты">
       <div class="col">
         <h3>Контакты</h3>
-        <p>Телефон: <strong style="color:var(--text);">+7 701 918 59 94, +7 701 916 55 88</strong><br>
-        Почта:<strong style="color:var(--text)"> it@t-it.kz</strong>
+        <p>Телефон: 
+          <strong style="color:var(--text);">
+            <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+              <span>+7 701 918 59 94</span>
+              <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async">
+            </a>
+          </strong>
+          <br>
+          Почта:<strong style="color:var(--text)"> it@t-it.kz</strong>
         </p>
       </div>
     </section>
