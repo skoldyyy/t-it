@@ -335,7 +335,6 @@
       border-radius: 1px;
       transition: all .2s ease;
     }
-    
     .nav-toggle span + span { margin-top: 5px; }
     .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav-toggle.active span:nth-child(2) { opacity: 0; }
@@ -722,93 +721,5 @@
       });
     });
   </script>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  /**
-   * Настройки сравнения:
-   * - compareWithSearch: учитываем ли query string при сравнении (false по умолчанию)
-   * - treatIndexAsHome: считать index.html и '/' одинаковыми
-   */
-  const config = {
-    compareWithSearch: false,
-    compareWithHash: false,
-    treatIndexAsHome: true
-  };
-
-  function normalizePath(href) {
-    try {
-      // превращаем href в абсолютный URL, чтобы корректно сравнить с location
-      const url = new URL(href, location.origin);
-      let path = url.pathname.replace(/\/+$/, ''); // убрать trailing slash
-      if (path === '' && config.treatIndexAsHome) path = '/';
-      if (config.compareWithSearch) path += url.search;
-      if (config.compareWithHash) path += url.hash;
-      return path || '/';
-    } catch (e) {
-      // если href — не URL (например, '#contacts'), вернуть как есть
-      return href;
-    }
-  }
-
-  function currentNormalized() {
-    let path = location.pathname.replace(/\/+$/, '');
-    if (path === '' && config.treatIndexAsHome) path = '/';
-    if (config.compareWithSearch) path += location.search;
-    if (config.compareWithHash) path += location.hash;
-    return path || '/';
-  }
-
-  const current = currentNormalized();
-  // выбираем все ссылочные элементы меню, включая те, что имеют класс nav-link
-  const menuLinks = Array.from(document.querySelectorAll('.menu a, .menu .nav-link, .dropdown-toggle'));
-
-  menuLinks.forEach((el) => {
-    const href = el.getAttribute('href') || el.dataset.href || '';
-    // если элемент не имеет href (например, кнопка .dropdown-toggle), пропускаем
-    if (!href) return;
-
-    const normalized = normalizePath(href);
-
-    // Поддерживаем якорные ссылки: если href начинается с '#', сравниваем по хешу с текущим location.hash
-    if (href.startsWith('#')) {
-      if (location.hash === href) {
-        markActive(el);
-      }
-      return;
-    }
-
-    // Сравнение путей (чувствительно к pathname и опциям)
-    if (normalized === current) {
-      markActive(el);
-    } else {
-      // Если один путь равен "/index.html" а другой "/" — возможность пометить как active
-      if (config.treatIndexAsHome) {
-        const alt = (normalized === '/index.html') ? '/' : (normalized === '/' ? '/index.html' : null);
-        if (alt && alt === current) markActive(el);
-      }
-    }
-  });
-
-  function markActive(el) {
-    el.classList.add('active');
-    // accessibility: пометить как текущую страницу
-    el.setAttribute('aria-current', 'page');
-
-    // Делать некликабельной: удаляем href и добавляем role="text" - но лучше просто блокировать pointer-events
-    // Удалять href может ухудшить SEO/UX в некоторых случаях, поэтому просто блокируем клики и фокус.
-    // Но если хотите полностью удалить href, раскомментируйте строку ниже.
-    // el.removeAttribute('href');
-
-    // блокируем клик
-    el.addEventListener('click', function preventClick(ev) {
-      ev.preventDefault();
-      ev.stopPropagation();
-    }, { capture: true, passive: false });
-
-    // убрать таб-фокус (опционально)
-    el.setAttribute('tabindex', '-1');
-  }
-});
-</script>
 </body>
 </html>
