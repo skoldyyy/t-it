@@ -103,6 +103,28 @@
     .menu a:hover, .menu .nav-link:hover,
     .menu a:focus, .menu .nav-link:focus { color:var(--text); transform:translateY(-3px); background:rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
 
+    .menu a.active,
+    .menu .nav-link.active,
+    .dropdown-toggle.active {
+      background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+      color: #fff;
+      transform: none;
+      box-shadow: 0 10px 30px rgba(91,131,255,0.14);
+      cursor: default;
+      pointer-events: none; /* дополнительно блокирует клики */
+    }
+
+/* если вы хотите, чтобы внутри mobile menu поведение было то же самое */
+    .menu.open a.active,
+    .menu.open .nav-link.active {
+      pointer-events: none;
+    }
+
+/* адаптив: чтобы ссылка не выглядела как фокусируемая кнопка (опционально) */
+    .menu a.active:focus {
+      outline: none;
+      box-shadow: none;
+    }
     .dropdown { position: relative; display:inline-block; }
     .dropdown-toggle {
       --pad-x:12px;
@@ -893,5 +915,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   </script>
+  
 </body>
 </html>
