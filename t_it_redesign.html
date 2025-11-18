@@ -42,6 +42,7 @@
       display:flex;
       justify-content:center;
       background-repeat: no-repeat;
+      background-color: var(--bg-900);
     }
 
     .wrap{
@@ -73,7 +74,6 @@
     .nav-contacts .phone{ font-weight:700; color:var(--text); display:inline-flex; align-items:center; gap:8px; }
     .nav-contacts .small{ font-size:12px; color:var(--muted); }
 
-    /* whatsapp icon style */
     .wh-icon { width:18px; height:18px; display:inline-block; vertical-align:middle; }
     .wh-link { color:var(--text); text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
     .wh-link:hover, .wh-link:focus { text-decoration:none; opacity:0.95; transform:translateY(-2px); }
@@ -111,19 +111,6 @@
       transform: none;
       box-shadow: 0 10px 30px rgba(91,131,255,0.14);
       cursor: default;
-      pointer-events: none; /* дополнительно блокирует клики */
-    }
-
-/* если вы хотите, чтобы внутри mobile menu поведение было то же самое */
-    .menu.open a.active,
-    .menu.open .nav-link.active {
-      pointer-events: none;
-    }
-
-/* адаптив: чтобы ссылка не выглядела как фокусируемая кнопка (опционально) */
-    .menu a.active:focus {
-      outline: none;
-      box-shadow: none;
     }
     .dropdown { position: relative; display:inline-block; }
     .dropdown-toggle {
