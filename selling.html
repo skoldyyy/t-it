@@ -20,7 +20,7 @@
       --accent-b: #7b61ff;
       --card-shadow: 0 14px 50px rgba(2,6,23,0.45);
       --radius:14px;
-      --max-width:1260px;
+      --max-width:1370px;
       --glass-strong: rgba(255,255,255,0.04);
       --glass-border: rgba(255,255,255,0.05);
       --focus: rgba(95,176,255,0.14);
@@ -104,14 +104,14 @@
     .menu a:focus, .menu .nav-link:focus { color:var(--text); transform:translateY(-3px); background:rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
 
     .menu a.active,
-    .menu .nav-link.active,
-    .dropdown-toggle.active {
+    .menu .nav-link.active {
       background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
       color: #fff;
       transform: none;
       box-shadow: 0 10px 30px rgba(91,131,255,0.14);
       cursor: default;
     }
+
     .dropdown { position: relative; display:inline-block; }
     .dropdown-toggle {
       --pad-x:12px;
@@ -133,16 +133,27 @@
       opacity:0; transform: translateY(8px); pointer-events:none; transition: opacity .18s ease, transform .18s ease;
       z-index:120;
     }
-    .dropdown-menu a {
-      display:block; padding:10px 12px; border-radius:8px; color:var(--muted); text-decoration:none; font-weight:600;
-      transition: background .12s ease, color .12s ease;
-    }
-    .dropdown-menu a:hover, .dropdown-menu a:focus { background: rgba(255,255,255,0.02); color:var(--text); outline:none; }
-
-    .dropdown:hover .dropdown-menu,
     .dropdown.open .dropdown-menu {
       opacity:1; transform: translateY(0); pointer-events:auto;
     }
+
+    .dropdown-menu a {
+      display:block; align-items:flex-start; gap:10px; padding:10px 12px; border-radius:8px;
+      color:var(--muted); text-decoration:none; transition: all .12s ease;
+      background:transparent;
+    }
+    .dropdown-menu a:hover, .dropdown-menu a:focus {
+      background: rgba(255,255,255,0.04); transform:translateX(5px);
+      box-shadow: 0 6px 18px rgba(2,6,23,0.2);
+    }
+    .dropdown-menu .item-icon {
+      display:flex; align-items:center; justify-content:center; min-width:32px; height:32px;
+      border-radius:8px; background: linear-gradient(135deg, rgba(95,176,255,0.08), rgba(123,97,255,0.05));
+      font-size:15px;
+    }
+    .dropdown-menu .item-text { flex:1; display:flex; flex-direction:column; gap:2px; }
+    .dropdown-menu .item-title { font-weight:600; font-size:14px; color:var(--text); }
+    .dropdown-menu .item-desc { font-size:12px; color:var(--muted); }
 
     .card{
       border-radius:var(--radius);
@@ -201,7 +212,7 @@
       text-shadow: 0 6px 30px rgba(2,6,23,0.6);
     }
 
-    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:70ch; }
+    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:88ch; }
 
     .cta-row{ display:flex; gap:12px; align-items:center; margin-top:6px; flex-wrap:wrap; }
     .btn-cta{
@@ -224,14 +235,14 @@
     }
 
     
-    .hero-right{
+     .hero-left-img{
       position:relative;
       min-height:100%;
-      background-image: url('img/image.png'); /* картинка справа */
+      background-image: url('img/image.png'); 
       background-size:cover; 
       background-position:center;
-    }
-    .hero-right::after{
+    } 
+    .hero-left-img::after{
       content:"";
       position:absolute; inset:0;
       background: linear-gradient(180deg, rgba(2,6,23,0.12), rgba(2,6,23,0.42));
@@ -526,6 +537,7 @@
         <div class="dropdown" id="navServices">
           <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle">
             Услуги
+            <span class="chev">▼</span>
           </button>
           <div class="dropdown-menu" id="servicesMenu" role="menu">
             <a href="#repair-laptops">Ремонт ноутбуков</a>
@@ -546,10 +558,8 @@
 
     <section class="card hero fade-up" id="heroCard" aria-labelledby="heroTitle">
   
-  <!-- Картинка теперь слева -->
   <div class="hero-left-img"></div>
 
-  <!-- Текст справа -->
   <div class="hero-right-text">
     <span class="pill">«MGM»</span>
     <h1 id="heroTitle" class="h-title">Компьютеры MadGameMachine «MGM»</h1>
@@ -563,7 +573,7 @@
     </p>
     <h3>«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
 
-    <div style="margin-top:14px; display:flex; gap:12px; align-items:flex-start;">
+    <!-- <div style="margin-top:14px; display:flex; gap:12px; align-items:flex-start;">
       <div style="min-width:0">
         <h3 style="margin:0 0 6px 0; font-size:15px; color:var(--text)">Миссия</h3>
         <p style="margin:0;color:var(--muted);font-size:14px;max-width:58ch">
@@ -571,15 +581,7 @@
         </p>
       </div>
     </div>
-  </div>
-
-</section>
-
-      <div class="hero-right" aria-hidden="true">
-        <div class="hero-cta-wrap">
-        </div>
-      </div>
-    </section>
+  </div> -->
 
     <section class="contacts-block fade-up" id="contacts" role="region" aria-label="Контакты">
       <div class="col">
