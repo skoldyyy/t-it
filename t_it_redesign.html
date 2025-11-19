@@ -42,7 +42,7 @@
       display:flex;
       justify-content:center;
       background-repeat: no-repeat;
-      background-color: var(--bg-900);
+      background-color: #111218;
     }
 
     .wrap{
@@ -254,14 +254,17 @@
       display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:14px;
     }
     .service{
-      padding:18px; border-radius:12px;
+      padding:14px; 
+      border-radius:12px;
       background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));
       border:1px solid rgba(255,255,255,0.02);
       transition: transform .14s ease, box-shadow .14s ease;
+      line-height: 18px;
+      align-items: center;
     }
     .service:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(2,6,23,0.24); }
     .service h4{ margin:0 0 8px 0; color:var(--text); font-size:16px; }
-    .service p{ margin:0; color:var(--muted); font-size:14px; }
+    .service p{ margin-top:10px; color:var(--muted); font-size:14px; }
 
     .contacts-block{
       display:flex; gap:20px; align-items:flex-start; justify-content:space-between;
@@ -395,7 +398,7 @@
         flex-direction: column;
         gap: 0;
         overflow-y: auto;
-        height: 70vh;
+        height: 72vh;
       }
       .menu.open { transform: translateY(0); }
 
@@ -565,16 +568,28 @@
         <h3>Основные направления</h3>
         <div class="grid" style="margin-top:12px;">
           <div class="service">
-            <h4>Ремонт техники и монтаж сетей</h4>
-            <p>Ремонтируем компьютеры и ноутбуки в нашем сервисном центре, а так же настраиваем и прокладываем надежные локальные сети под ключ.</p>
+            <h4>IT Аутсорсинг</h4>
+            <p>Мы и есть та специализированная компания, которой вы можете передать обслуживание своей IT инфраструктуры.</p>
           </div>
           <div class="service">
-            <h4>Обслуживание компаний</h4>
-            <p>Поддержка офисной техники и сетевого оборудования. Удаленное администрирование и выезд к клиенту.</p>
+            <h4>Сервисный центр</h4>
+            <p>У нас опытные и квалифицированные специалисты по ремонту компьютеров, ноутбуков, моноблоков, мониторов, принтеров, многофункциональных устройств и много чего другого!</p>
+          </div>
+          <div class="service">
+            <h4>Облачные хранилища</h4>
+            <p>Мы предоставляем свои защищенные сервера в аренду для ваших программ и баз данных.</p>
+          </div>
+          <div class="service">
+            <h4>Заправка картриджей</h4>
+            <p>Профессиональная заправка лазерных и струйных картриджей, обслуживание и прошивка принтеров.</p>
           </div>
           <div class="service">
             <h4>Сборка и продажа компьютеров</h4>
-            <p>Поможем подобрать оборудование под ваши задачи и бюджет, соберём ПК, настроим и подготовим технику к работе.</p>
+            <p>Поможем подобрать оборудование под ваши задачи и бюджет, соберем ПК, настроим и подготовим технику к работе.</p>
+          </div>
+          <div class="service">
+            <h4>Сервера</h4>
+            <p>Профессиональное администрирование, настройка серверов, программного обеспечения и 1С предприятие.</p>
           </div>
         </div>
       </div>

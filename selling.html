@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Комплексное Техническое Обслуживание - T-IT</title>
+  <title>Компьютеры MadGameMachine «MGM» - T-IT Company</title>
   <link rel="icon" type="image/png" href="img/t-it-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,33 +164,33 @@
     }
 
     .hero {
-  display: grid;
-  grid-template-columns: 440px 1fr; /* картинка слева */
-  min-height: 400px;
-}
+      display: grid;
+      grid-template-columns: 440px 1fr; /* картинка слева */
+      min-height: 400px;
+    }
 
-.hero-left-img {
-  background-image: url('img/image.png');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
+    .hero-left-img {
+      background-image: url('img/image.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
 
-.hero-left-img::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(2,6,23,0.12), rgba(2,6,23,0.42));
-  mix-blend-mode: multiply;
-}
+    .hero-left-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(2,6,23,0.12), rgba(2,6,23,0.42));
+      mix-blend-mode: multiply;
+    }
 
-.hero-right-text {
-  padding: 40px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
-}
+    .hero-right-text {
+      padding: 40px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
 
     .pill{
       display:inline-block;
@@ -359,7 +359,6 @@
       .dropdown { width:100%; }
     }
 
-    /* Менюшка для телефонов */
     .nav-toggle {
       display: none;
       background: none;
@@ -497,6 +496,86 @@
     .fade-up{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
     .fade-up.show{ opacity:1; transform: translateY(0); }
     html{ scroll-behavior:smooth; }
+
+    /* === НОВАЯ СЕКЦИЯ КАТАЛОГА === */
+    .catalog-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
+      gap:24px;
+      margin:40px 0;
+    }
+    .build-card{
+      position:relative;
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+      border:1px solid var(--glass-border);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .build-card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 24px 70px rgba(2,6,23,0.65);
+    }
+    .build-img{
+      height:220px;
+      background:var(--accent-a) center/cover no-repeat;
+      position:relative;
+    }
+    .build-img::after{
+      content:"MGM";
+      position:absolute;
+      top:16px;left:16px;
+      font-size:32px;
+      font-weight:900;
+      color:rgba(255,255,255,0.2);
+      letter-spacing:4px;
+    }
+    .build-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.88);}
+    .build-body{padding:20px;}
+    .build-title{
+      font-size:20px;
+      font-weight:800;
+      margin:0 0 8px 0;
+      color:var(--text);
+    }
+    .build-price{
+      font-size:28px;
+      font-weight:900;
+      color:var(--accent-a);
+      margin:12px 0;
+    }
+    .build-specs{
+      list-style:none;
+      padding:0;
+      margin:16px 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+    }
+    .build-specs li{
+      display:flex;
+      justify-content:space-between;
+      padding:6px 0;
+      border-bottom:1px dashed rgba(255,255,255,0.06);
+    }
+    .build-specs li:last-child{border:none;}
+    .build-actions{
+      display:flex;
+      gap:12px;
+      margin-top:20px;
+    }
+    .btn-primary{
+      flex:1;
+      padding:12px;
+      border-radius:12px;
+      background:linear-gradient(90deg,var(--accent-a),var(--accent-b));
+      color:white;
+      font-weight:800;
+      text-align:center;
+      text-decoration:none;
+      transition:transform .16s ease;
+    }
+    .btn-primary:hover{transform:translateY(-4px);}
   </style>
 </head>
 <body>
@@ -557,29 +636,93 @@
     </div>
 
     <section class="card hero fade-up" id="heroCard" aria-labelledby="heroTitle">
-  
-  <div class="hero-left-img"></div>
-
-  <div class="hero-right-text">
-    <span class="pill">«MGM»</span>
-    <h1 id="heroTitle" class="h-title">Компьютеры MadGameMachine «MGM»</h1>
-    <p class="lead">
-      Компьютеры «MGM» — это профессиональное конфигурирование и сборка высокопроизводительных игровых компьютеров.
-      <br>Мы создаём системы, ориентированные на максимальную производительность, стабильность и комфортную игру на любых настройках.
-      <br><br>Наши специалисты подбирают оптимальные комплектующие под задачи клиента, используя проверенные решения и современные технологии. 
-      <br>Мы тщательно тестируем каждую сборку, обеспечивая высокую надёжность и полную реализацию потенциала конфигурации.
-      <br><br>«MGM» предлагает индивидуальные проекты — от компактных игровых систем до мощных кастомных сборок с уникальным дизайном.
-      <br><br><strong>Наша цель — сделать игровой опыт максимально качественным, а покупку — простой и прозрачной.</strong>
-    </p>
-    <h3>«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
-
-    <!-- <div style="margin-top:14px; display:flex; gap:12px; align-items:flex-start;">
-      <div style="min-width:0">
-        <p style="margin:0;color:var(--muted);font-size:14px;max-width:58ch">
+      <div class="hero-left-img"></div>
+      <div class="hero-right-text">
+        <span class="pill">«MGM»</span>
+        <h1 id="heroTitle" class="h-title">Компьютеры MadGameMachine «MGM»</h1>
+        <p class="lead">
+          Компьютеры «MGM» — это профессиональное конфигурирование и сборка высокопроизводительных игровых компьютеров.
+          <br>Мы создаём системы, ориентированные на максимальную производительность, стабильность и комфортную игру на любых настройках.
+          <br><br>Наши специалисты подбирают оптимальные комплектующие под задачи клиента, используя проверенные решения и современные технологии. 
+          <br>Мы тщательно тестируем каждую сборку, обеспечивая высокую надёжность и полную реализацию потенциала конфигурации.
+          <br><br>«MGM» предлагает индивидуальные проекты — от компактных игровых систем до мощных кастомных сборок с уникальным дизайном.
+          <br><br><strong>Наша цель — сделать игровой опыт максимально качественным, а покупку — простой и прозрачной.</strong>
         </p>
+        <h3>«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
       </div>
-    </div>
-  </div> -->
+    </section>
+
+    <!-- КАТАЛОГ СБОРОК -->
+    <section class="fade-up">
+      <h2 style="font-size:32px;text-align:center;margin:40px 0 20px;color:var(--text);text-shadow:0 6px 30px rgba(2,6,23,0.6);">
+        Каталог готовых сборок MGM
+      </h2>
+      <div class="catalog-grid">
+        <!-- Сборка 1 -->
+        <div class="build-card">
+          <div class="build-img" style="background-image:url('img/oar2.jpg');">
+            <img src="img/oar2.jpg" alt="MGM Entry" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3 class="build-title">MGM Entry</h3>
+            <div class="build-price">380 000 ₸</div>
+            <ul class="build-specs">
+              <li><span>Процессор</span><strong>Ryzen 5 5600</strong></li>
+              <li><span>Видеокарта</span><strong>RTX 3060 12GB</strong></li>
+              <li><span>Оперативка</span><strong>16GB DDR4 3200</strong></li>
+              <li><span>Накопитель</span><strong>1TB NVMe SSD</strong></li>
+              <li><span>Корпус</span><strong>Zalman S3 + RGB</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Сборка 2 -->
+        <div class="build-card">
+          <div class="build-img" style="background-image:url('img/oar2.jpg');">
+            <img src="img/oar2.jpg" alt="MGM Pro" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3 class="build-title">MGM Pro</h3>
+            <div class="build-price">720 000 ₸</div>
+            <ul class="build-specs">
+              <li><span>Процессор</span><strong>Ryzen 7 7700X</strong></li>
+              <li><span>Видеокарта</span><strong>RTX 4070 Ti 12GB</strong></li>
+              <li><span>Оперативка</span><strong>32GB DDR5 6000</strong></li>
+              <li><span>Накопитель</span><strong>2TB NVMe Gen4</strong></li>
+              <li><span>Корпус</span><strong>Lian Li Lancool III RGB</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Сборка 3 -->
+        <div class="build-card">
+          <div class="build-img" style="background-image:url('img/oar2.jpg');">
+            <img src="img/oar2.jpg" alt="MGM Ultimate" loading="lazy">
+          </div>
+          <div class="build-body">
+            <h3 class="build-title">MGM Ultimate</h3>
+            <div class="build-price">1 290 000 ₸</div>
+            <ul class="build-specs">
+              <li><span>Процессор</span><strong>Ryzen 9 7950X3D</strong></li>
+              <li><span>Видеокарта</span><strong>RTX 4090 24GB</strong></li>
+              <li><span>Оперативка</span><strong>64GB DDR5 6400</strong></li>
+              <li><span>Накопитель</span><strong>4TB NVMe Gen4</strong></li>
+              <li><span>Корпус + СВО</span><strong>Corsair 1000D + Custom loop</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div style="text-align:center;margin-top:40px;">
+        <p style="font-size:18px;color:var(--muted);">
+          Не нашли подходящую сборку?<br>
+          Напишите нам — соберём ПК именно под ваши задачи и бюджет!
+        </p>
+        <a href="https://wa.me/77019185994?text=Здравствуйте!%20Хочу%20индивидуальную%20сборку%20MGM" class="btn-primary" style="display:inline-block;padding:14px 28px;font-size:18px;margin-top:16px;" target="_blank">
+          Заказать индивидуальную сборку
+        </a>
+      </div>
+    </section> -->
 
     <section class="contacts-block fade-up" id="contacts" role="region" aria-label="Контакты">
       <div class="col">
