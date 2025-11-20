@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root{
       --bg-900: #050615;
@@ -74,9 +75,9 @@
     .nav-contacts .phone{ font-weight:700; color:var(--text); display:inline-flex; align-items:center; gap:8px; }
     .nav-contacts .small{ font-size:12px; color:var(--muted); }
 
-    .wh-icon { width:20px; height:20px; display:inline-block; vertical-align:middle; margin-right: 5px; margin-bottom: 2px; }
+    .wh-icon { width:20px; height:20px; display:inline-block; vertical-align:middle; }
     .wh-link { color:var(--text); text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
-    .wh-link:hover, .wh-link:focus { text-decoration:none; opacity:0.95; transform:translateY(-2px); }
+    .wh-link:hover, .wh-link:focus { text-decoration:none; opacity:0.95; transform:translateY(-2px); transition: all .14s ease;}
 
     .card-icon { display:inline-block; vertical-align:middle; margin-right: 4px; margin-bottom: 2px; }
 
@@ -213,12 +214,14 @@
       color:white; font-weight:800; cursor:pointer; text-decoration:none;
       box-shadow: 0 14px 40px rgba(91,131,255,0.12);
       transition: transform .16s ease, box-shadow .16s ease;
+      touch-action: manipulation;
     }
     .btn-cta:hover{ transform: translateY(-4px); box-shadow: 0 20px 60px rgba(91,131,255,0.16); }
 
     .ghost{
       padding:10px 12px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.04);
       color:var(--muted); font-weight:700; cursor: pointer;
+      touch-action: manipulation;
     }
 
     
@@ -486,6 +489,60 @@
     .fade-up{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
     .fade-up.show{ opacity:1; transform: translateY(0); }
     html{ scroll-behavior:smooth; }
+
+    .copy-icon {
+      width: 22px; height: 20px;
+      vertical-align: middle;
+      transition: transform 0.3s ease, color 0.3s ease;
+      margin-left: 10px;
+    }
+
+    .copy-icon:hover {
+      color: #007bff;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+    
+    .toast {
+      opacity: 0;
+      min-width: 250px;
+      margin-left: -125px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 16px;
+      position: fixed;
+      z-index: 10000; /* Выше всего */
+      left: 50%;
+      bottom: 30px;
+      font-size: 17px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast.hide {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* Адаптация toast для мобильных */
+    @media (max-width: 720px) {
+      .toast {
+        bottom: auto;
+        top: 30px; /* Сверху, чтобы не перекрывать нижнюю панель */
+        min-width: 80%; /* Шире для маленьких экранов */
+        margin-left: -40%; /* Центрирование */
+        font-size: 15px; /* Меньше шрифт */
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -557,7 +614,7 @@
           </div>
         </div>
       </div>
-      <a href="selling.html" class="hero-link">
+      <a href="selling.html" class="hero-link" role="link">
   <div class="hero-right" aria-hidden="true">
     <div class="hero-cta-wrap">
       <span class="hero-badge">Сборка и продажа компьютеров</span>
@@ -628,172 +685,107 @@
     </div>
 
     <section class="contacts-block fade-up" id="contacts" role="region" aria-label="Контакты">
-      <div class="col">
-        <h3>Контакты</h3>
-        <p>Телефон: 
-          <strong style="color:var(--text);">
-            <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
-              <span>+7 701 918 59 94</span>
-              <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async">
-            </a>
-          </strong>
-          <br>
-          Почта:<strong style="color:var(--text)"> it@t-it.kz</strong>
-        </p>
-      </div>
-    </section>
+  <div class="col">
+    <h3>Контакты</h3>
+    <p>Телефон: <strong style="color:var(--text);">
+      <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+        <span>+7 701 918 59 94</span>
+        <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async">
+      </a>
+      <img class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать номер телефона" onclick="copyPhone()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
+    </strong>
+    <br> Почта: <strong style="color:var(--text)"> it@t-it.kz
+      <img class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать email" onclick="copyEmail()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
+    </strong> </p>
+  </div>
+</section>
 
     <footer class="fade-up">© 2012 «T-IT»</footer>
   </div>
 
+  <!-- Toast с aria-live для доступности -->
+  <div id="toast" class="toast" aria-live="polite">Скопировано в буфер обмена!</div>
+
   <script>
-  const GM_LAT = 52.288891703060415;
-  const GM_LNG = 76.94001087225888;
-  const PLACE_ID = "ChIJsaLHeCk1-EIRGxPL-B_b5ck";
+    // Объединённый скрипт для всех функций
+    const GM_LAT = 52.288891703060415;
+    const GM_LNG = 76.94001087225888;
+    const PLACE_ID = "ChIJsaLHeCk1-EIRGxPL-B_b5ck";
 
-  const FALLBACK_ORIGIN = "Павлодар, 140000";
-  const DESTINATION_TEXT = "Компания T-IT сервисный центр, Ул. Академика Сатпаева, 46, Павлодар";
+    const FALLBACK_ORIGIN = "Павлодар, 140000";
+    const DESTINATION_TEXT = "Компания T-IT сервисный центр, Ул. Академика Сатпаева, 46, Павлодар";
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const openLink = document.getElementById('openGMaps');
-    const directionsBtn = document.getElementById('getDirections');
-
-    openLink.href = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`;
-
-    function getOriginPromise(timeout = 8000) {
-      return new Promise((resolve) => {
-        if (!navigator.geolocation) {
-          resolve(FALLBACK_ORIGIN);
-          return;
-        }
-
-        const options = {
-          enableHighAccuracy: true,
-          timeout: timeout,
-          maximumAge: 0
-        };
-
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            const lat = pos.coords.latitude;
-            const lng = pos.coords.longitude;
-            resolve(`${lat},${lng}`);
-          },
-          (err) => {
-            console.warn('Geolocation error:', err);
-            resolve(FALLBACK_ORIGIN);
-          },
-          options
-        );
-      });
+    function isTouchDevice() {
+      return (('ontouchstart' in window) || navigator.maxTouchPoints > 0);
     }
 
-    // Маршрут
-    directionsBtn.addEventListener('click', async () => {
-      const origin = await getOriginPromise();
-
-      const destination = encodeURIComponent(DESTINATION_TEXT);
-      const originParam = encodeURIComponent(origin);
-
-      const url = `https://www.google.com/maps/dir/?api=1&origin=${originParam}&destination=${destination}&travelmode=driving`;
-
-      window.open(url, '_blank', 'noopener');
-    });
-  });
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const openLink = document.getElementById('openGMaps');
-
-  const lat = 52.288891703060415;
-  const lng = 76.94001087225888;
-  const label = 'Сервисный Центр T-IT';
-  const placeQueryText = 'Компания T-IT сервисный центр, Павлодар';
-
-  // URLs (web fallbacks)
-  const webPlaceById = `https://www.google.com/maps/place/?q=place_id:ChIJsaLHeCk1-EIRGxPL-B_b5ck`;
-  const webSearch = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeQueryText)}`;
-  const webCoords = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
-
-  const geoUri = `geo:${lat},${lng}?q=${lat},${lng}(${encodeURIComponent(label)})`; 
-  const intentUri = `intent://maps.google.com/maps?daddr=${lat},${lng}&q=${lat},${lng}(${encodeURIComponent(label)})#Intent;package=com.google.android.apps.maps;scheme=https;end`;
-  const comGoogleMapsUri = `comgooglemaps://?q=${encodeURIComponent(label)}&center=${lat},${lng}`;
-
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
-  const isAndroid = /Android/i.test(ua);
-  const isIOS = /iPhone|iPad|iPod/i.test(ua);
-
-  openLink.href = webSearch;
-
-  openLink.addEventListener('click', function (e) {
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) {
-      return;
+    function copyPhone() {
+      const phoneNumber = '+77019185994';
+      copyToClipboard(phoneNumber, 'Номер скопирован в буфер обмена!');
     }
-    e.preventDefault();
 
-    if (isAndroid) {
-      let opened = false;
-      // try intent first
-      try {
-        window.location.href = intentUri;
-        opened = true;
-      } catch (err) {
-        console.warn('Intent open failed, trying geo:', err);
+    function copyEmail() {
+      const email = 'it@t-it.kz';
+      copyToClipboard(email, 'Email скопирован в буфер обмена!');
+    }
+
+    function copyToClipboard(text, message) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(message);
+        }).catch(err => {
+          fallbackCopy(text, message, err);
+        });
+      } else {
+        fallbackCopy(text, message);
       }
-
-      setTimeout(() => {
-        try {
-          window.location.href = geoUri;
-        } catch (err) {
-          window.open(webSearch, '_blank', 'noopener');
-        }
-      }, 600);
-      return;
     }
 
-    if (isIOS) {
-      const now = Date.now();
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = comGoogleMapsUri;
-      document.body.appendChild(iframe);
-
-      setTimeout(() => {
-        document.body.removeChild(iframe);
-        if (Date.now() - now < 2000) {
-          window.open(webSearch, '_blank', 'noopener');
-        }
-      }, 1200);
-      return;
+    function fallbackCopy(text, message, err = null) {
+      if (err) console.error('Ошибка копирования: ', err);
+      const tempInput = document.createElement('input');
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      showToast(message);
     }
 
-    window.open(webSearch, '_blank', 'noopener');
-  });
-});
-</script>
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      toast.classList.remove('hide');
+      setTimeout(() => {
+        toast.classList.add('hide');
+        toast.classList.remove('show');
+      }, 2000);
+    }
 
-  <script>
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.fade-up').forEach((el,i) => {
-        setTimeout(()=> el.classList.add('show'), 80*i + 200);
+      // Fade-up анимация
+      document.querySelectorAll('.fade-up').forEach((el, i) => {
+        setTimeout(() => el.classList.add('show'), 80 * i + 200);
       });
 
+      // Тема
       const toggle = document.getElementById('themeToggle');
       let dark = localStorage.getItem('theme') === 'dark';
 
       function applyTheme() {
         if (dark) {
-          document.documentElement.style.setProperty('--bg-900','#050615');
-          document.documentElement.style.setProperty('--bg-700','#0f1730');
-          document.documentElement.style.setProperty('--accent-a','#5fb0ff');
-          document.documentElement.style.setProperty('--accent-b','#7b61ff');
+          document.documentElement.style.setProperty('--bg-900', '#050615');
+          document.documentElement.style.setProperty('--bg-700', '#0f1730');
+          document.documentElement.style.setProperty('--accent-a', '#5fb0ff');
+          document.documentElement.style.setProperty('--accent-b', '#7b61ff');
           toggle.textContent = 'Ночной режим';
           localStorage.setItem('theme', 'dark');
         } else {
-          document.documentElement.style.setProperty('--bg-900','#0e0e12');
-          document.documentElement.style.setProperty('--bg-700','#111218');
-          document.documentElement.style.setProperty('--accent-a','#ff8a65');
-          document.documentElement.style.setProperty('--accent-b','#ff5e9e');
+          document.documentElement.style.setProperty('--bg-900', '#0e0e12');
+          document.documentElement.style.setProperty('--bg-700', '#111218');
+          document.documentElement.style.setProperty('--accent-a', '#ff8a65');
+          document.documentElement.style.setProperty('--accent-b', '#ff5e9e');
           toggle.textContent = 'Тёмный режим';
           localStorage.setItem('theme', 'light');
         }
@@ -804,45 +796,38 @@ document.addEventListener('DOMContentLoaded', () => {
         dark = !dark;
         applyTheme();
       });
-    });
-  </script>
 
-  <script>
-    function isTouchDevice(){
-      return (('ontouchstart' in window) || navigator.maxTouchPoints > 0);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
+      // Dropdown услуг
       const dropdown = document.getElementById('navServices');
-      const toggle = document.getElementById('servicesToggle');
-      const menu = document.getElementById('servicesMenu');
+      const servicesToggle = document.getElementById('servicesToggle');
+      const servicesMenu = document.getElementById('servicesMenu');
       let leaveTimer = null;
 
       dropdown.addEventListener('mouseenter', () => {
         clearTimeout(leaveTimer);
         dropdown.classList.add('open');
-        toggle.setAttribute('aria-expanded','true');
+        servicesToggle.setAttribute('aria-expanded', 'true');
       });
       dropdown.addEventListener('mouseleave', () => {
         leaveTimer = setTimeout(() => {
           dropdown.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
+          servicesToggle.setAttribute('aria-expanded', 'false');
         }, 200);
       });
 
-      toggle.addEventListener('click', (ev) => {
+      servicesToggle.addEventListener('click', (ev) => {
         ev.preventDefault();
         clearTimeout(leaveTimer);
         const open = dropdown.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        servicesToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
 
-      menu.addEventListener('click', (ev) => ev.stopPropagation());
+      servicesMenu.addEventListener('click', (ev) => ev.stopPropagation());
 
       document.addEventListener('click', (ev) => {
         if (!dropdown.contains(ev.target)) {
           dropdown.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
+          servicesToggle.setAttribute('aria-expanded', 'false');
         }
       });
 
@@ -850,15 +835,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('touchstart', (ev) => {
           if (!dropdown.contains(ev.target)) {
             dropdown.classList.remove('open');
-            toggle.setAttribute('aria-expanded','false');
+            servicesToggle.setAttribute('aria-expanded', 'false');
           }
-        }, {passive:true});
+        }, { passive: true });
       }
-    });
-  </script>
 
-  <script>
-    (function() {
+      // Smooth scroll для ссылок #
       function getHeaderOffset() {
         const header = document.querySelector('header.header');
         if (!header) return 0;
@@ -901,36 +883,141 @@ document.addEventListener('DOMContentLoaded', () => {
           targetEl.focus({ preventScroll: true });
         }
       }, { passive: false });
-    })();
-  </script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggle = document.getElementById('navToggle');
-      const menu = document.getElementById('mainMenu');
-      const closeBtn = document.getElementById('menuClose');
+      // Мобильное меню
+      const navToggle = document.getElementById('navToggle');
+      const mainMenu = document.getElementById('mainMenu');
+      const menuClose = document.getElementById('menuClose');
       const body = document.body;
 
       function toggleMenu() {
-        const isOpen = menu.classList.toggle('open');
-        toggle.classList.toggle('active');
-        toggle.setAttribute('aria-expanded', isOpen);
+        const isOpen = mainMenu.classList.toggle('open');
+        navToggle.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', isOpen);
         body.classList.toggle('menu-open', isOpen);
       }
 
-      toggle.addEventListener('click', toggleMenu);
-      if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+      navToggle.addEventListener('click', toggleMenu);
+      if (menuClose) menuClose.addEventListener('click', toggleMenu);
 
       document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-          menu.classList.remove('open');
-          toggle.classList.remove('active');
-          toggle.setAttribute('aria-expanded', 'false');
+        if (!mainMenu.contains(e.target) && !navToggle.contains(e.target)) {
+          mainMenu.classList.remove('open');
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
           body.classList.remove('menu-open');
         }
       });
+
+      // Карта Google
+      const openLink = document.getElementById('openGMaps');
+      const directionsBtn = document.getElementById('getDirections');
+
+      const lat = 52.288891703060415;
+      const lng = 76.94001087225888;
+      const label = 'Сервисный Центр T-IT';
+      const placeQueryText = 'Компания T-IT сервисный центр, Павлодар';
+
+      // URLs (web fallbacks)
+      const webPlaceById = `https://www.google.com/maps/place/?q=place_id:ChIJsaLHeCk1-EIRGxPL-B_b5ck`;
+      const webSearch = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeQueryText)}`;
+      const webCoords = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+
+      const geoUri = `geo:${lat},${lng}?q=${lat},${lng}(${encodeURIComponent(label)})`; 
+      const intentUri = `intent://maps.google.com/maps?daddr=${lat},${lng}&q=${lat},${lng}(${encodeURIComponent(label)})#Intent;package=com.google.android.apps.maps;scheme=https;end`;
+      const comGoogleMapsUri = `comgooglemaps://?q=${encodeURIComponent(label)}&center=${lat},${lng}`;
+
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      const isAndroid = /Android/i.test(ua);
+      const isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+      openLink.href = webSearch;
+
+      openLink.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) {
+          return;
+        }
+        e.preventDefault();
+
+        if (isAndroid) {
+          let opened = false;
+          // try intent first
+          try {
+            window.location.href = intentUri;
+            opened = true;
+          } catch (err) {
+            console.warn('Intent open failed, trying geo:', err);
+          }
+
+          setTimeout(() => {
+            try {
+              window.location.href = geoUri;
+            } catch (err) {
+              window.open(webSearch, '_blank', 'noopener');
+            }
+          }, 600);
+          return;
+        }
+
+        if (isIOS) {
+          const now = Date.now();
+          const iframe = document.createElement('iframe');
+          iframe.style.display = 'none';
+          iframe.src = comGoogleMapsUri;
+          document.body.appendChild(iframe);
+
+          setTimeout(() => {
+            document.body.removeChild(iframe);
+            if (Date.now() - now < 2000) {
+              window.open(webSearch, '_blank', 'noopener');
+            }
+          }, 1200);
+          return;
+        }
+
+        window.open(webSearch, '_blank', 'noopener');
+      });
+
+      function getOriginPromise(timeout = 8000) {
+        return new Promise((resolve) => {
+          if (!navigator.geolocation) {
+            resolve(FALLBACK_ORIGIN);
+            return;
+          }
+
+          const options = {
+            enableHighAccuracy: true,
+            timeout: timeout,
+            maximumAge: 0
+          };
+
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              const lat = pos.coords.latitude;
+              const lng = pos.coords.longitude;
+              resolve(`${lat},${lng}`);
+            },
+            (err) => {
+              console.warn('Geolocation error:', err);
+              resolve(FALLBACK_ORIGIN);
+            },
+            options
+          );
+        });
+      }
+
+      // Маршрут
+      directionsBtn.addEventListener('click', async () => {
+        const origin = await getOriginPromise();
+
+        const destination = encodeURIComponent(DESTINATION_TEXT);
+        const originParam = encodeURIComponent(origin);
+
+        const url = `https://www.google.com/maps/dir/?api=1&origin=${originParam}&destination=${destination}&travelmode=driving`;
+
+        window.open(url, '_blank', 'noopener');
+      });
     });
   </script>
-  
 </body>
 </html>
