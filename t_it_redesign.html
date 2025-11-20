@@ -20,7 +20,7 @@
       --accent-b: #7b61ff;
       --card-shadow: 0 14px 50px rgba(2,6,23,0.45);
       --radius:14px;
-      --max-width:1260px;
+      --max-width:1270px;
       --glass-strong: rgba(255,255,255,0.04);
       --glass-border: rgba(255,255,255,0.05);
       --focus: rgba(95,176,255,0.14);
@@ -74,9 +74,11 @@
     .nav-contacts .phone{ font-weight:700; color:var(--text); display:inline-flex; align-items:center; gap:8px; }
     .nav-contacts .small{ font-size:12px; color:var(--muted); }
 
-    .wh-icon { width:18px; height:18px; display:inline-block; vertical-align:middle; }
+    .wh-icon { width:20px; height:20px; display:inline-block; vertical-align:middle; margin-right: 5px; margin-bottom: 2px; }
     .wh-link { color:var(--text); text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
     .wh-link:hover, .wh-link:focus { text-decoration:none; opacity:0.95; transform:translateY(-2px); }
+
+    .card-icon { display:inline-block; vertical-align:middle; margin-right: 4px; margin-bottom: 2px; }
 
     /* переключатель тем */
     .controls{ display:flex; gap:8px; align-items:center; margin-left:12px; }
@@ -555,12 +557,13 @@
           </div>
         </div>
       </div>
-
-      <div class="hero-right" aria-hidden="true">
-        <div class="hero-cta-wrap">
-          <a class="hero-badge">Сборка и продажа компьютеров</a>
-        </div>
-      </div>
+      <a href="selling.html" class="hero-link">
+  <div class="hero-right" aria-hidden="true">
+    <div class="hero-cta-wrap">
+      <span class="hero-badge">Сборка и продажа компьютеров</span>
+    </div>
+  </div>
+</a>
     </section>
 
     <section class="card fade-up" style="overflow:visible;">
@@ -568,27 +571,27 @@
         <h3>Основные направления</h3>
         <div class="grid" style="margin-top:12px;">
           <div class="service">
-            <h4>IT Аутсорсинг</h4>
+            <h4><img class="card-icon" width="22" height="22" src="img/itout-ico.png" alt="IT-outsourcing"> IT Аутсорсинг</h4>
             <p>Мы и есть та специализированная компания, которой вы можете передать обслуживание своей IT инфраструктуры.</p>
           </div>
           <div class="service">
-            <h4>Сервисный центр</h4>
+            <h4><img class="card-icon" width="24" height="22" src="img/service-centre-ico.png" alt="Service Centre"> Сервисный центр</h4>
             <p>У нас опытные и квалифицированные специалисты по ремонту компьютеров, ноутбуков, моноблоков, мониторов, принтеров, многофункциональных устройств и много чего другого!</p>
           </div>
           <div class="service">
-            <h4>Облачные хранилища</h4>
+            <h4><img class="card-icon" width="24" height="22" src="img/cloud-service-ico.png" alt="Cloud Service">Облачные хранилища</h4>
             <p>Мы предоставляем свои защищенные сервера в аренду для ваших программ и баз данных.</p>
           </div>
           <div class="service">
-            <h4>Заправка картриджей</h4>
+            <h4><img class="card-icon" width="26" height="24" src="img/cartridges-ico.png" alt="Cartridges">Заправка картриджей</h4>
             <p>Профессиональная заправка лазерных и струйных картриджей, обслуживание и прошивка принтеров.</p>
           </div>
           <div class="service">
-            <h4>Сборка и продажа компьютеров</h4>
+            <h4><img class="card-icon" width="26" height="20" src="img/setup-ico.png" alt="Setup">Сборка и продажа компьютеров</h4>
             <p>Поможем подобрать оборудование под ваши задачи и бюджет, соберем ПК, настроим и подготовим технику к работе.</p>
           </div>
           <div class="service">
-            <h4>Сервера</h4>
+            <h4><img class="card-icon" width="22" height="24" src="img/server-ico.png"  alt="Server"> Сервера</h4>
             <p>Профессиональное администрирование, настройка серверов, программного обеспечения и 1С предприятие.</p>
           </div>
         </div>
