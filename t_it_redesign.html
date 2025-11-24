@@ -7,8 +7,7 @@
   <link rel="icon" type="image/png" href="img/t-it-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg-900: #050615;
@@ -31,7 +30,7 @@
     
     body{
       margin:0;
-      font-family:"Inter",system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:"Inter", system-ui, "Segoe UI", "Roboto", "Arial", sans-serif;
       color:var(--text);
       background:
         radial-gradient(600px 200px at 10% 10%, rgba(123,97,255,0.07), transparent 12%),
@@ -68,7 +67,7 @@
     }
     .logo img{ width:56px;height:56px;border-radius:10px;object-fit:cover; }
     .brand{ display:flex; flex-direction:column; gap:2px;}
-    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text); }
+    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text);}
     .brand p{ margin:0; font-size:12px; color:var(--muted); }
 
     .nav-contacts{ margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
@@ -189,6 +188,7 @@
       font-weight:700; 
       font-size:13px;
       box-shadow: 0 6px 18px rgba(95,176,255,0.04);
+      pointer-events: none;
     }
 
     h1.h-title{
@@ -254,7 +254,7 @@
     .content{
       padding:28px 34px; background:transparent;
     }
-    .content h3{ margin:0 0 8px 0; color:var(--text); }
+    .content h3{ margin:0 0 8px 0; color:var(--text); font-family: "Science Gothic"}
     .grid{
       display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:14px;
     }
@@ -268,8 +268,8 @@
       align-items: center;
     }
     .service:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(2,6,23,0.24); }
-    .service h4{ margin:0 0 8px 0; color:var(--text); font-size:16px; }
-    .service p{ margin-top:10px; color:var(--muted); font-size:14px; }
+    .service h4{ margin:0 0 8px 0; color:var(--text); font-size:16px; pointer-events: none; font-family: "Science Gothic";}
+    .service p{ margin-top:10px; color:var(--muted); font-size:14px; pointer-events: none;}
 
     .contacts-block{
       display:flex; gap:20px; align-items:flex-start; justify-content:space-between;
@@ -277,25 +277,11 @@
       border:1px solid rgba(255,255,255,0.02); backdrop-filter: blur(6px);
     }
     .contacts-block .col{ flex:1; min-width:260px; }
-    .contacts-block h3{ margin:0 0 8px 0; color:var(--text); }
+    .contacts-block h3{ margin:0 0 8px 0; color:var(--text); font-family: "Science Gothic";}
     .contacts-block p{ margin:0; color:var(--muted); }
 
-    .form input, .form textarea{
-      width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
-      background: rgba(255,255,255,0.02); color:var(--text); font-size:14px;
-      transition: box-shadow .14s ease, border-color .14s ease;
-      resize: vertical;
-    }
-    .form input:focus, .form textarea:focus{
-      outline:none; box-shadow: 0 10px 30px var(--focus); border-color: rgba(95,176,255,0.22);
-    }
-    .form .submit{
-      display:inline-block; margin-left:auto; margin-top:4px; padding:10px 14px; border-radius:10px;
-      border:0; background: linear-gradient(90deg,var(--accent-a),var(--accent-b)); color:white; font-weight:700; cursor:pointer;
-    }
-
     footer{
-      text-align:center; color:var(--muted); font-size:13px; padding:12px;
+      text-align:center; color:var(--muted); font-size:13px; padding:12px; pointer-events: none;
     }
 
     .map-col { flex:1; min-width:320px; }
@@ -403,7 +389,7 @@
         flex-direction: column;
         gap: 0;
         overflow-y: auto;
-        height: 72vh;
+        max-height: 72vh;
       }
       .menu.open { transform: translateY(0); }
 
@@ -503,46 +489,46 @@
       cursor: pointer;
     }
     
-    .toast {
-      opacity: 0;
-      min-width: 250px;
-      margin-left: -125px;
-      background-color: #4CAF50;
-      color: #fff;
-      text-align: center;
-      border-radius: 5px;
-      padding: 16px;
-      position: fixed;
-      z-index: 10000; /* Выше всего */
-      left: 50%;
-      bottom: 30px;
-      font-size: 17px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .toast.hide {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    /* Адаптация toast для мобильных */
-    @media (max-width: 720px) {
       .toast {
-        bottom: auto;
-        top: 30px; /* Сверху, чтобы не перекрывать нижнюю панель */
-        min-width: 80%; /* Шире для маленьких экранов */
-        margin-left: -40%; /* Центрирование */
-        font-size: 15px; /* Меньше шрифт */
-        padding: 12px;
+        opacity: 0;
+        margin-left: -125px;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 16px;
+        position: fixed;
+        z-index: 10000;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transform: translateY(20px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        pointer-events: none;
       }
-    }
+
+      .toast { background-color: #4CAF50; }
+      .toast-passive { background-color: #333; min-width: 170px;}
+
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .toast.hide {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @media (max-width: 720px) {
+        .toast {
+          bottom: auto;
+          top: 30px;
+          min-width: 80%;
+          margin-left: -40%;
+          font-size: 15px;
+          padding: 12px;
+        }
+      }
   </style>
 </head>
 <body>
@@ -578,7 +564,7 @@
 
       <div class="menu" role="navigation" aria-label="Основное меню" id="mainMenu">
         <button class="menu-close" id="menuClose" aria-label="Закрыть меню">Закрыть ×</button>
-        <a href="t_it_redesign.html">Главная</a>
+        <a href="#" onclick="Current()">Главная</a>
 
         <div class="dropdown" id="navServices">
           <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle">
@@ -604,13 +590,13 @@
     <section class="card hero fade-up" id="heroCard" aria-labelledby="heroTitle">
       <div class="hero-left">
         <span class="pill">О нас</span>
-        <h1 id="heroTitle" class="h-title">T-IT - динамично развивающаяся IT-компания</h1>
+        <h1 id="heroTitle" class="h-title">T-IT - динамично развивающаяся IT-компания!</h1>
         <p class="lead">С 2012 года мы повышаем эффективность бизнеса клиентов: серверы, сети, облака, безопасность и кастомные решения. Быстро, профессионально и с вниманием к результату.</p>
 
         <div style="margin-top:14px; display:flex; gap:12px; align-items:flex-start;">
           <div style="min-width:0">
-            <h3 style="margin:0 0 6px 0; font-size:15px; color:var(--text)">Миссия</h3>
-            <p style="margin:0;color:var(--muted);font-size:14px;max-width:58ch"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
+            <h3 style="margin:0 0 6px 0; font-family: 'Science Gothic'; font-size:15px; color:var(--text)">Миссия</h3>
+            <p style="margin:0;color:var(--muted);font-size:14px;max-width:65ch"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
           </div>
         </div>
       </div>
@@ -703,11 +689,11 @@
     <footer class="fade-up">© 2012 «T-IT»</footer>
   </div>
 
-  <!-- Toast с aria-live для доступности -->
-  <div id="toast" class="toast" aria-live="polite">Скопировано в буфер обмена!</div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <div id="toast-passive" class="toast toast-passive" role="status" aria-live="polite"></div>
 
   <script>
-    // Объединённый скрипт для всех функций
     const GM_LAT = 52.288891703060415;
     const GM_LNG = 76.94001087225888;
     const PLACE_ID = "ChIJsaLHeCk1-EIRGxPL-B_b5ck";
@@ -719,20 +705,56 @@
       return (('ontouchstart' in window) || navigator.maxTouchPoints > 0);
     }
 
+const toastTimers = {};
+
+    function showToast(message, options = {}) {
+      const id = options.id || 'toast';
+      const duration = options.duration ?? 2000;
+      const el = document.getElementById(id);
+      if (!el) return console.warn('Toast element not found:', id);
+
+      el.textContent = message;
+
+      if (toastTimers[id]) {
+        clearTimeout(toastTimers[id]);
+        toastTimers[id] = null;
+      }
+
+      el.classList.remove('hide');
+      void el.offsetWidth;
+      el.classList.add('show');
+
+      toastTimers[id] = setTimeout(() => {
+        el.classList.remove('show');
+        el.classList.add('hide');
+        toastTimers[id] = null;
+      }, duration);
+    }
+
+    function showPassiveToast(message, duration) {
+      showToast(message, { id: 'toast-passive', duration });
+    }
+    function showPrimaryToast(message, duration) {
+      showToast(message, { id: 'toast', duration });
+    }
+
     function copyPhone() {
-      const phoneNumber = '+77019185994';
+      const phoneNumber = '+7 701 918 59 94';
       copyToClipboard(phoneNumber, 'Номер скопирован в буфер обмена!');
     }
 
     function copyEmail() {
       const email = 'it@t-it.kz';
-      copyToClipboard(email, 'Email скопирован в буфер обмена!');
+      copyToClipboard(email, 'Почта скопирована в буфер обмена!');
+    }
+    function Current() {
+      showPassiveToast("Вы уже здесь");
     }
 
     function copyToClipboard(text, message) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
-          showToast(message);
+          showPrimaryToast(message);
         }).catch(err => {
           fallbackCopy(text, message, err);
         });
@@ -747,13 +769,27 @@
       tempInput.value = text;
       document.body.appendChild(tempInput);
       tempInput.select();
-      document.execCommand('copy');
+      try {
+        document.execCommand('copy');
+        showPrimaryToast(message);
+      } catch(e) {
+        console.error('Fallback copy failed', e);
+      }
       document.body.removeChild(tempInput);
-      showToast(message);
     }
 
     function showToast(message) {
       const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      toast.classList.remove('hide');
+      setTimeout(() => {
+        toast.classList.add('hide');
+        toast.classList.remove('show');
+      }, 2000);
+    }
+    function showPassiveToast(message) {
+      const toast = document.getElementById('toast-passive');
       toast.textContent = message;
       toast.classList.add('show');
       toast.classList.remove('hide');
@@ -797,7 +833,7 @@
         applyTheme();
       });
 
-      // Dropdown услуг
+      // Панелька с услугами
       const dropdown = document.getElementById('navServices');
       const servicesToggle = document.getElementById('servicesToggle');
       const servicesMenu = document.getElementById('servicesMenu');
@@ -909,7 +945,7 @@
         }
       });
 
-      // Карта Google
+      // Карта
       const openLink = document.getElementById('openGMaps');
       const directionsBtn = document.getElementById('getDirections');
 
@@ -918,7 +954,6 @@
       const label = 'Сервисный Центр T-IT';
       const placeQueryText = 'Компания T-IT сервисный центр, Павлодар';
 
-      // URLs (web fallbacks)
       const webPlaceById = `https://www.google.com/maps/place/?q=place_id:ChIJsaLHeCk1-EIRGxPL-B_b5ck`;
       const webSearch = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeQueryText)}`;
       const webCoords = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
@@ -941,7 +976,6 @@
 
         if (isAndroid) {
           let opened = false;
-          // try intent first
           try {
             window.location.href = intentUri;
             opened = true;
