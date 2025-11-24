@@ -211,7 +211,7 @@
       color:white; font-weight:800; cursor:pointer; text-decoration:none;
       box-shadow: 0 14px 40px rgba(91,131,255,0.12);
       transition: transform .16s ease, box-shadow .16s ease;
-      touch-action: manipulation; /* Оптимизация для touch */
+      touch-action: manipulation;
     }
     .btn-cta:hover{ transform: translateY(-4px); box-shadow: 0 20px 60px rgba(91,131,255,0.16); }
 
@@ -588,7 +588,7 @@
       </div>
 
       <div class="nav-contacts" aria-hidden="false">
-        <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+        <a title="Открыть в WhatsApp" class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
           <span><strong>+7 701 918 59 94</strong></span>
           <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async"> 
         </a>
@@ -657,8 +657,8 @@
       <div class="catalog-grid">
         <!-- Сборка 1 -->
         <div class="build-card">
-          <div class="build-img" style="background-image:url('img/oar2.jpg');">
-            <img src="img/oar2.jpg" alt="MGM Entry" loading="lazy">
+          <div class="build-img" style="background-image:url('');">
+            <img src="" alt="1" loading="lazy">
           </div>
           <div class="build-body">
             <h3 class="build-title">MGM Entry</h3>
@@ -675,8 +675,8 @@
 
         <!-- Сборка 2 -->
         <div class="build-card">
-          <div class="build-img" style="background-image:url('img/oar2.jpg');">
-            <img src="img/oar2.jpg" alt="MGM Pro" loading="lazy">
+          <div class="build-img" style="background-image:url('');">
+            <img src="" alt="2" loading="lazy">
           </div>
           <div class="build-body">
             <h3 class="build-title">MGM Pro</h3>
@@ -693,8 +693,8 @@
 
         <!-- Сборка 3 -->
         <div class="build-card">
-          <div class="build-img" style="background-image:url('img/oar2.jpg');">
-            <img src="img/oar2.jpg" alt="MGM Ultimate" loading="lazy">
+          <div class="build-img" style="background-image:url('');">
+            <img src="" alt="3" loading="lazy">
           </div>
           <div class="build-body">
             <h3 class="build-title">MGM Ultimate</h3>
@@ -725,14 +725,14 @@
       <div class="col">
         <h3>Контакты</h3>
         <p>Телефон: <strong style="color:var(--text);">
-          <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+          <a title="Открыть в WhatsApp" class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
             <span>+7 701 918 59 94</span>
             <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async">
           </a>
-          <img title="Копировать номер телефона" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать номер телефона" onclick="copyPhone()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
+          <img title="Скопировать номер телефона" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать номер телефона" onclick="copyPhone()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
         </strong>
         <br> Почта: <strong style="color:var(--text)"> it@t-it.kz
-          <img title="Копировать почту" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать email" onclick="copyEmail()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
+          <img title="Скопировать почту" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать email" onclick="copyEmail()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
         </strong> </p>
       </div>
     </section>
