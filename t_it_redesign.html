@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg-900: #050615;
@@ -50,12 +52,12 @@
       max-width:var(--max-width);
       margin:8px auto;
       display:grid;
-      gap:18px;
+      gap:24px;
     }
 
     header.header{
       display:flex;
-      gap:18px;
+      gap:22px;
       align-items:center;
       padding:14px;
       border-radius:12px;
@@ -101,6 +103,7 @@
       font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:8px;
       transition: all .14s ease;
       background: transparent; border: 0;
+      font-family: "Science Gothic";
     }
     .menu a:hover, .menu .nav-link:hover,
     .menu a:focus, .menu .nav-link:focus { color:var(--text); transform:translateY(-3px); background:rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
@@ -189,18 +192,19 @@
       font-size:13px;
       box-shadow: 0 6px 18px rgba(95,176,255,0.04);
       pointer-events: none;
+      font-family: "Science Gothic";
     }
 
     h1.h-title{
       margin:0; 
-      font-size:34px; 
-      line-height:1.05; 
+      font-size:32px; 
+      line-height: 1.2; 
       color:var(--text); 
-      letter-spacing:-0.2px;
+      letter-spacing:-0.6px;
       text-shadow: 0 6px 30px rgba(2,6,23,0.6);
     }
 
-    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:70ch; }
+    p.lead{ margin:0; color:var(--muted); font-size:16px; max-width:78ch; font-family: "Play", sans-serif; line-height:1.2; font-weight: 600;}
 
     .cta-row{ display:flex; gap:12px; align-items:center; margin-top:6px; flex-wrap:wrap; }
     .btn-cta{
@@ -269,7 +273,7 @@
     }
     .service:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(2,6,23,0.24); }
     .service h4{ margin:0 0 8px 0; color:var(--text); font-size:16px; pointer-events: none; font-family: "Science Gothic";}
-    .service p{ margin-top:10px; color:var(--muted); font-size:14px; pointer-events: none;}
+    .service p{ margin-top:10px; color:var(--muted); font-size:14px; pointer-events: none; font-family: "Science Gothic"; letter-spacing: 1.4;}
 
     .contacts-block{
       display:flex; gap:20px; align-items:flex-start; justify-content:space-between;
@@ -567,7 +571,7 @@
         <a href="#" onclick="Current()">Главная</a>
 
         <div class="dropdown" id="navServices">
-          <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle">
+          <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle" style="font-family:'Science Gothic';">
             Услуги
           </button>
           <div class="dropdown-menu" id="servicesMenu" role="menu">
@@ -580,9 +584,9 @@
           </div>
         </div>
 
-        <a href="#contacts">Контакты</a>
-        <a href="#address">Адрес</a>
         <a href="selling.html">Продажа компьютеров</a>
+        <a href="#address">Адрес</a>
+        <a href="#contacts">Контакты</a>
         
       </div>
     </div>
@@ -596,19 +600,19 @@
         <div style="margin-top:14px; display:flex; gap:12px; align-items:flex-start;">
           <div style="min-width:0">
             <h3 style="margin:0 0 6px 0; font-family: 'Science Gothic'; font-size:15px; color:var(--text)">Миссия</h3>
-            <p style="margin:0;color:var(--muted);font-size:14px;max-width:65ch"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
+            <p style="margin:0;color:var(--muted);font-size:14px;max-width:65ch; font-family: 'Roboto Mono'"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
           </div>
         </div>
       </div>
       <a href="selling.html" class="hero-link" role="link">
-  <div class="hero-right" aria-hidden="true">
-    <div class="hero-cta-wrap">
-      <span class="hero-badge">Сборка и продажа компьютеров</span>
-    </div>
-  </div>
-</a>
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-cta-wrap">
+          <span class="hero-badge">Сборка и продажа компьютеров</span>
+        </div>
+      </div>
+      </a>
     </section>
-
+    
     <section class="card fade-up" style="overflow:visible;">
       <div class="content" id="services">
         <h3>Основные направления</h3>
@@ -619,7 +623,7 @@
           </div>
           <div class="service">
             <h4><img class="card-icon" width="24" height="22" src="img/service-centre-ico.png" alt="Service Centre"> Сервисный центр</h4>
-            <p>У нас опытные и квалифицированные специалисты по ремонту компьютеров, ноутбуков, моноблоков, мониторов, принтеров, многофункциональных устройств и много чего другого!</p>
+            <p>У нас опытные и квалифицированные специалисты по ремонту компьютеров, ноутбуков, моноблоков, мониторов, принтеров и много чего другого!</p>
           </div>
           <div class="service">
             <h4><img class="card-icon" width="24" height="22" src="img/cloud-service-ico.png" alt="Cloud Service">Облачные хранилища</h4>
@@ -657,9 +661,9 @@
 
         <div class="map-overlay" aria-hidden="false">
           <div class="addr">
-            <strong>Сервисный Центр T-IT </strong>
-            <div>Ул. Академика Сатпаева, 46</div>
-            <div style="font-size:12px;color:var(--muted);margin-top:4px;">Пн–Пт 10:00–18:00</div>
+            <strong style="font-family: 'Science Gothic';">Сервисный Центр T-IT </strong>
+            <div style="font-family: 'Play';">Ул. Академика Сатпаева, 46</div>
+            <div style="font-size: 12px; margin-top: 4px; font-family: 'Play';">Пн–Пт 10:00–18:00</div>
           </div>
 
           <div class="map-actions" role="group" aria-label="Действия с картой">

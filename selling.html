@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg-900: #050615;
@@ -99,6 +101,7 @@
       font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:8px;
       transition: all .14s ease;
       background: transparent; border: 0;
+      font-family: "Science Gothic";
     }
     .menu a:hover, .menu .nav-link:hover,
     .menu a:focus, .menu .nav-link:focus { color:var(--text); transform:translateY(-3px); background:rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
@@ -112,7 +115,7 @@
       cursor: default;
     }
 
-    .dropdown { position: relative; display:inline-block; }
+    .dropdown { position: relative; display:inline-block;}
     .dropdown-toggle {
       --pad-x:12px;
       padding:10px var(--pad-x); border-radius:10px; cursor:pointer; user-select:none;
@@ -196,9 +199,10 @@
       color:var(--text); 
       letter-spacing:-0.2px;
       text-shadow: 0 6px 30px rgba(2,6,23,0.6);
+      font-family: "Play", sans-serif;
     }
 
-    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:88ch; line-height: 22px; }
+    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:88ch; line-height: 22px;}
 
     .cta-row{ display:flex; gap:12px; align-items:center; margin-top:6px; flex-wrap:wrap; }
     .btn-cta{
@@ -415,12 +419,6 @@
       .contacts-block { flex-direction: column; gap: 16px; padding: 16px; }
       .col { min-width: 0; }
 
-      #gm-map { height: 220px; }
-      .map-card { position: static; display: flex; flex-direction: column; gap: 12px; }
-      .map-overlay { position: static; bottom: auto; left: auto; max-width: 100%; flex-direction: column; align-items: flex-start; }
-      .map-overlay .map-actions { margin-left: 0; width: 100%; justify-content: space-between; flex-wrap: wrap; }
-      .map-overlay .btn-cta, .map-overlay .ghost { font-size: 12px; padding: 6px 10px; flex: 1; text-align: center; }
-
       footer { font-size: 12px; padding: 16px 0; }
     }
 
@@ -613,7 +611,7 @@
         <a href="t_it_redesign.html">Главная</a>
 
         <div class="dropdown" id="navServices">
-          <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle">
+          <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle" style="font-family:'Science Gothic';">
             Услуги
             
           </button>
@@ -627,14 +625,11 @@
           </div>
         </div>
 
-        <a href="#contacts">Контакты</a>
-
-        <!-- ??????????????????????????????????????? -->
-        <a href="#address">Адрес</a>  
-        <!-- ??????????????????????????????????????????????? -->
-
-
+        
         <a href="#" onclick="Current()">Продажа компьютеров</a>
+        <a href="#catalog">Каталог сборок</a>  
+        <a href="#contacts">Контакты</a>
+        
       </div>
     </div>
 
@@ -652,12 +647,12 @@
           <br><br>«MGM» предлагает индивидуальные проекты — от <strong>компактных игровых систем</strong> до <strong>мощных кастомных сборок</strong> с уникальным дизайном.
           <br><br><strong>Наша цель — сделать игровой опыт максимально качественным, а покупку — простой и прозрачной.</strong>
         </p>
-        <h3>«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
+        <h3 style="font-family: 'Play', sans-serif; font-weight: 700;">«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
       </div>
     </section>
 
     <!-- Каталог -->
-    <section class="fade-up">
+    <section class="fade-up" id="catalog">
       <h2 style="font-size:32px; font-family: 'Science Gothic'; text-align:center;margin:40px 0 20px;color:var(--text);text-shadow:0 6px 30px rgba(2,6,23,0.6);">
         Каталог готовых сборок MGM
       </h2>
