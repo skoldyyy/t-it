@@ -122,10 +122,7 @@
       color:var(--muted); background:transparent; border:0; font-weight:600; font-size:14px;
       display:inline-flex; align-items:center; gap:8px;
     }
-    .dropdown-toggle:hover, .dropdown-toggle:focus { color:var(--text); background:rgba(255,255,255,0.02); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
-    .dropdown-toggle .chev {
-      display:inline-block; transition: transform .18s ease; font-size:12px; color:var(--muted);
-    }
+    .dropdown-toggle:hover, .dropdown-toggle:focus { color:var(--text); background:rgba(255,255,255,0.02); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; backdrop-filter: blur(5px);}
 
     .dropdown.open .dropdown-toggle .chev { transform: rotate(180deg); color:var(--text); }
 
@@ -229,7 +226,7 @@
      .hero-left-img{
       position:relative;
       min-height:100%;
-      background-image: url('img/Computer-mgm.png');  /* Картинка слева */
+      background-image: url('img/pcv1.png');  /* Картинка слева */
       background-size:cover; 
       background-position:center;
     } 
