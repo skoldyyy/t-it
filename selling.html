@@ -7,7 +7,9 @@
   <link rel="icon" type="image/png" href="img/t-it-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg-900: #050615;
@@ -72,7 +74,7 @@
 
     .nav-contacts{ margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
     .nav-contacts .phone{ font-weight:700; color:var(--text); display:inline-flex; align-items:center; gap:8px; }
-    .nav-contacts .small{ font-size:12px; color:var(--muted); }
+    .nav-contacts .small{ font-size:12px; color:var(--muted);}
 
     .wh-icon { width:18px; height:18px; display:inline-block; vertical-align:middle; }
     .wh-link { color:var(--text); text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
@@ -99,6 +101,7 @@
       font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:8px;
       transition: all .14s ease;
       background: transparent; border: 0;
+      font-family: "Science Gothic";
     }
     .menu a:hover, .menu .nav-link:hover,
     .menu a:focus, .menu .nav-link:focus { color:var(--text); transform:translateY(-3px); background:rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
@@ -112,17 +115,14 @@
       cursor: default;
     }
 
-    .dropdown { position: relative; display:inline-block; }
+    .dropdown { position: relative; display:inline-block;}
     .dropdown-toggle {
       --pad-x:12px;
       padding:10px var(--pad-x); border-radius:10px; cursor:pointer; user-select:none;
       color:var(--muted); background:transparent; border:0; font-weight:600; font-size:14px;
       display:inline-flex; align-items:center; gap:8px;
     }
-    .dropdown-toggle:hover, .dropdown-toggle:focus { color:var(--text); background:rgba(255,255,255,0.02); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
-    .dropdown-toggle .chev {
-      display:inline-block; transition: transform .18s ease; font-size:12px; color:var(--muted);
-    }
+    .dropdown-toggle:hover, .dropdown-toggle:focus { color:var(--text); background:rgba(255,255,255,0.02); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; backdrop-filter: blur(5px);}
 
     .dropdown.open .dropdown-toggle .chev { transform: rotate(180deg); color:var(--text); }
 
@@ -186,6 +186,7 @@
       font-weight:700; 
       font-size:13px;
       box-shadow: 0 6px 18px rgba(95,176,255,0.04);
+      font-family: "Science Gothic";
     }
 
     h1.h-title{
@@ -195,9 +196,10 @@
       color:var(--text); 
       letter-spacing:-0.2px;
       text-shadow: 0 6px 30px rgba(2,6,23,0.6);
+      font-family: "Play", sans-serif;
     }
 
-    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:88ch; line-height: 22px; }
+    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:88ch; line-height: 22px;}
 
     .cta-row{ display:flex; gap:12px; align-items:center; margin-top:6px; flex-wrap:wrap; }
     .btn-cta{
@@ -211,7 +213,7 @@
       color:white; font-weight:800; cursor:pointer; text-decoration:none;
       box-shadow: 0 14px 40px rgba(91,131,255,0.12);
       transition: transform .16s ease, box-shadow .16s ease;
-      touch-action: manipulation; /* Оптимизация для touch */
+      touch-action: manipulation;
     }
     .btn-cta:hover{ transform: translateY(-4px); box-shadow: 0 20px 60px rgba(91,131,255,0.16); }
 
@@ -224,7 +226,7 @@
      .hero-left-img{
       position:relative;
       min-height:100%;
-      background-image: url('img/Computer-mgm.png'); 
+      background-image: url('img/pcv1.png');  /* Картинка слева */
       background-size:cover; 
       background-position:center;
     } 
@@ -270,7 +272,7 @@
       border:1px solid rgba(255,255,255,0.02); backdrop-filter: blur(6px);
     }
     .contacts-block .col{ flex:1; min-width:260px; }
-    .contacts-block h3{ margin:0 0 8px 0; color:var(--text); }
+    .contacts-block h3{ margin:0 0 8px 0; color:var(--text); font-family: "Science Gothic";}
     .contacts-block p{ margin:0; color:var(--muted); }
 
     footer{
@@ -414,12 +416,6 @@
       .contacts-block { flex-direction: column; gap: 16px; padding: 16px; }
       .col { min-width: 0; }
 
-      #gm-map { height: 220px; }
-      .map-card { position: static; display: flex; flex-direction: column; gap: 12px; }
-      .map-overlay { position: static; bottom: auto; left: auto; max-width: 100%; flex-direction: column; align-items: flex-start; }
-      .map-overlay .map-actions { margin-left: 0; width: 100%; justify-content: space-between; flex-wrap: wrap; }
-      .map-overlay .btn-cta, .map-overlay .ghost { font-size: 12px; padding: 6px 10px; flex: 1; text-align: center; }
-
       footer { font-size: 12px; padding: 16px 0; }
     }
 
@@ -456,17 +452,17 @@
       box-shadow:0 24px 70px rgba(2,6,23,0.65);
     }
     .build-img{
-      height:220px;
+      height:240px;
       background:var(--accent-a) center/cover no-repeat;
       position:relative;
     }
 
     /* Ватермарка */
     /* .build-img::after{
-      content:"MGM";
+      content:"MadGameMachine";
       position:absolute;
       top:16px;left:16px;
-      font-size:32px;
+      font-size:24px;
       font-weight:900;
       color:rgba(255,255,255,0.2);
       letter-spacing:4px;
@@ -479,6 +475,7 @@
       font-weight:800;
       margin:0 0 8px 0;
       color:var(--text);
+      font-family: "Science Gothic"
     }
     .build-price{
       font-size:28px;
@@ -533,45 +530,46 @@
       
     }
     
-    .toast {
-      opacity: 0;
-      min-width: 250px;
-      margin-left: -125px;
-      background-color: #4CAF50;
-      color: #fff;
-      text-align: center;
-      border-radius: 5px;
-      padding: 16px;
-      position: fixed;
-      z-index: 10000;
-      left: 50%;
-      bottom: 30px;
-      font-size: 17px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .toast.hide {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    @media (max-width: 720px) {
       .toast {
-        bottom: auto;
-        top: 30px;
-        min-width: 80%;
-        margin-left: -40%;
-        font-size: 15px;
-        padding: 12px;
+        opacity: 0;
+        margin-left: -125px;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 16px;
+        position: fixed;
+        z-index: 10000;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transform: translateY(20px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        pointer-events: none;
       }
-    }
+
+      .toast { background-color: #4CAF50; }
+      .toast-passive { background-color: #333; min-width: 170px;}
+
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .toast.hide {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @media (max-width: 720px) {
+        .toast {
+          bottom: auto;
+          top: 30px;
+          min-width: 80%;
+          margin-left: -40%;
+          font-size: 15px;
+          padding: 12px;
+        }
+      }
   </style>
 </head>
 <body>
@@ -588,7 +586,7 @@
       </div>
 
       <div class="nav-contacts" aria-hidden="false">
-        <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+        <a title="Открыть в WhatsApp" class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer">
           <span><strong>+7 701 918 59 94</strong></span>
           <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async"> 
         </a>
@@ -610,7 +608,7 @@
         <a href="t_it_redesign.html">Главная</a>
 
         <div class="dropdown" id="navServices">
-          <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle">
+          <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle" style="font-family:'Science Gothic';">
             Услуги
             
           </button>
@@ -624,9 +622,10 @@
           </div>
         </div>
 
+        
+        <a href="#" onclick="Current()">Продажа компьютеров</a>
+        <a href="#catalog">Каталог сборок</a>  
         <a href="#contacts">Контакты</a>
-        <a href="#address">Адрес</a>
-        <a href="selling.html">Продажа компьютеров</a>
         
       </div>
     </div>
@@ -634,7 +633,7 @@
     <section class="card hero fade-up" id="heroCard" aria-labelledby="heroTitle">
       <div class="hero-left-img"></div>
       <div class="hero-right-text">
-        <span class="pill">«MGM»</span>
+        <span class="pill">«MadGameMachine»</span>
         <h1 id="heroTitle" class="h-title">Компьютеры MadGameMachine «MGM»</h1>
         <p class="lead">
           <strong>Компьютеры «MGM» — это профессиональное конфигурирование и сборка высокопроизводительных игровых компьютеров.</strong>
@@ -642,70 +641,70 @@
           <br>Мы создаём системы, ориентированные на максимальную <strong>производительность, стабильность и комфортную игру</strong> на любых настройках.
           <br><br>Наши специалисты подбирают оптимальные комплектующие под задачи клиента, используя проверенные решения и современные технологии.
           <br><strong>Мы тщательно тестируем каждую сборку</strong>, обеспечивая высокую надёжность и полную реализацию потенциала конфигурации.
-          <br><br>«MGM» предлагает индивидуальные проекты — от компактных игровых систем до мощных кастомных сборок с уникальным дизайном.
+          <br><br>«MGM» предлагает индивидуальные проекты — от <strong>компактных игровых систем</strong> до <strong>мощных кастомных сборок</strong> с уникальным дизайном.
           <br><br><strong>Наша цель — сделать игровой опыт максимально качественным, а покупку — простой и прозрачной.</strong>
         </p>
-        <h3>«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
+        <h3 style="font-family: 'Play', sans-serif; font-weight: 700;">«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
       </div>
     </section>
 
     <!-- Каталог -->
-    <section class="fade-up">
-      <h2 style="font-size:32px;text-align:center;margin:40px 0 20px;color:var(--text);text-shadow:0 6px 30px rgba(2,6,23,0.6);">
+    <section class="fade-up" id="catalog">
+      <h2 style="font-size:32px; font-family: 'Science Gothic'; text-align:center;margin:40px 0 20px;color:var(--text);text-shadow:0 6px 30px rgba(2,6,23,0.6);">
         Каталог готовых сборок MGM
       </h2>
       <div class="catalog-grid">
         <!-- Сборка 1 -->
         <div class="build-card">
-          <div class="build-img" style="background-image:url('img/oar2.jpg');">
-            <img src="img/oar2.jpg" alt="MGM Entry" loading="lazy">
+          <div class="build-img">
+            <img src="img/nullcat.png" alt="1" loading="lazy">
           </div>
           <div class="build-body">
-            <h3 class="build-title">MGM Entry</h3>
-            <div class="build-price">380 000 ₸</div>
-            <ul class="build-specs">
+            <h3 class="build-title">Скоро будет доступно</h3>
+            <!-- <div class="build-price"> ₸</div> -->
+            <!-- <ul class="build-specs">
               <li><span>Процессор</span><strong>Ryzen 5 5600</strong></li>
               <li><span>Видеокарта</span><strong>RTX 3060 12GB</strong></li>
               <li><span>Оперативка</span><strong>16GB DDR4 3200</strong></li>
               <li><span>Накопитель</span><strong>1TB NVMe SSD</strong></li>
               <li><span>Корпус</span><strong>Zalman S3 + RGB</strong></li>
-            </ul>
+            </ul> -->
           </div>
         </div>
 
         <!-- Сборка 2 -->
         <div class="build-card">
-          <div class="build-img" style="background-image:url('img/oar2.jpg');">
-            <img src="img/oar2.jpg" alt="MGM Pro" loading="lazy">
+          <div class="build-img">
+            <img src="img/nullcat.png" alt="2" loading="lazy">
           </div>
           <div class="build-body">
-            <h3 class="build-title">MGM Pro</h3>
-            <div class="build-price">720 000 ₸</div>
-            <ul class="build-specs">
+            <h3 class="build-title">Скоро будет доступно</h3>
+            <!-- <div class="build-price">720 000 ₸</div> -->
+            <!-- <ul class="build-specs">
               <li><span>Процессор</span><strong>Ryzen 7 7700X</strong></li>
               <li><span>Видеокарта</span><strong>RTX 4070 Ti 12GB</strong></li>
               <li><span>Оперативка</span><strong>32GB DDR5 6000</strong></li>
               <li><span>Накопитель</span><strong>2TB NVMe Gen4</strong></li>
               <li><span>Корпус</span><strong>Lian Li Lancool III RGB</strong></li>
-            </ul>
+            </ul> -->
           </div>
         </div>
 
         <!-- Сборка 3 -->
         <div class="build-card">
-          <div class="build-img" style="background-image:url('img/oar2.jpg');">
-            <img src="img/oar2.jpg" alt="MGM Ultimate" loading="lazy">
+          <div class="build-img">
+            <img src="img/nullcat.png" alt="3" loading="lazy">
           </div>
           <div class="build-body">
-            <h3 class="build-title">MGM Ultimate</h3>
-            <div class="build-price">1 290 000 ₸</div>
-            <ul class="build-specs">
+            <h3 class="build-title">Скоро будет доступно</h3>
+            <!-- <div class="build-price">1 290 000 ₸</div> -->
+            <!-- <ul class="build-specs">
               <li><span>Процессор</span><strong>Ryzen 9 7950X3D</strong></li>
               <li><span>Видеокарта</span><strong>RTX 4090 24GB</strong></li>
               <li><span>Оперативка</span><strong>64GB DDR5 6400</strong></li>
               <li><span>Накопитель</span><strong>4TB NVMe Gen4</strong></li>
               <li><span>Корпус + СВО</span><strong>Corsair 1000D + Custom loop</strong></li>
-            </ul>
+            </ul> -->
           </div>
         </div>
       </div>
@@ -725,14 +724,14 @@
       <div class="col">
         <h3>Контакты</h3>
         <p>Телефон: <strong style="color:var(--text);">
-          <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+          <a title="Открыть в WhatsApp" class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer">
             <span>+7 701 918 59 94</span>
             <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async">
           </a>
-          <img title="Копировать номер телефона" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать номер телефона" onclick="copyPhone()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
+          <img title="Скопировать номер телефона" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать номер телефона" onclick="copyPhone()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
         </strong>
         <br> Почта: <strong style="color:var(--text)"> it@t-it.kz
-          <img title="Копировать почту" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать email" onclick="copyEmail()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
+          <img title="Скопировать почту" class="copy-icon" src="img/copy-ico.png" width="20" height="20" onclick="copyEmail()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
         </strong> </p>
       </div>
     </section>
@@ -740,13 +739,45 @@
     <footer class="fade-up">© 2012 «T-IT»</footer>
   </div>
 
-  <!-- Toast с aria-live для доступности -->
-  <div id="toast" class="toast" aria-live="polite">Скопировано в буфер обмена!</div>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <div id="toast-passive" class="toast toast-passive" role="status" aria-live="polite"></div>
 
   <script>
-    // Объединённый скрипт для всех функций
     function isTouchDevice() {
       return (('ontouchstart' in window) || navigator.maxTouchPoints > 0);
+    }
+
+    const toastTimers = {};
+
+    function showToast(message, options = {}) {
+      const id = options.id || 'toast';
+      const duration = options.duration ?? 2000;
+      const el = document.getElementById(id);
+      if (!el) return console.warn('Toast element not found:', id);
+
+      el.textContent = message;
+
+      if (toastTimers[id]) {
+        clearTimeout(toastTimers[id]);
+        toastTimers[id] = null;
+      }
+
+      el.classList.remove('hide');
+      void el.offsetWidth;
+      el.classList.add('show');
+
+      toastTimers[id] = setTimeout(() => {
+        el.classList.remove('show');
+        el.classList.add('hide');
+        toastTimers[id] = null;
+      }, duration);
+    }
+
+    function showPassiveToast(message, duration) {
+      showToast(message, { id: 'toast-passive', duration });
+    }
+    function showPrimaryToast(message, duration) {
+      showToast(message, { id: 'toast', duration });
     }
 
     function copyPhone() {
@@ -758,11 +789,14 @@
       const email = 'it@t-it.kz';
       copyToClipboard(email, 'Почта скопирована в буфер обмена!');
     }
+    function Current() {
+      showPassiveToast("Вы уже здесь");
+    }
 
     function copyToClipboard(text, message) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
-          showToast(message);
+          showPrimaryToast(message);
         }).catch(err => {
           fallbackCopy(text, message, err);
         });
@@ -777,9 +811,13 @@
       tempInput.value = text;
       document.body.appendChild(tempInput);
       tempInput.select();
-      document.execCommand('copy');
+      try {
+        document.execCommand('copy');
+        showPrimaryToast(message);
+      } catch(e) {
+        console.error('Fallback copy failed', e);
+      }
       document.body.removeChild(tempInput);
-      showToast(message);
     }
 
     function showToast(message) {
@@ -792,9 +830,18 @@
         toast.classList.remove('show');
       }, 2000);
     }
+    function showPassiveToast(message) {
+      const toast = document.getElementById('toast-passive');
+      toast.textContent = message;
+      toast.classList.add('show');
+      toast.classList.remove('hide');
+      setTimeout(() => {
+        toast.classList.add('hide');
+        toast.classList.remove('show');
+      }, 2000);
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Fade-up анимация
       document.querySelectorAll('.fade-up').forEach((el, i) => {
         setTimeout(() => el.classList.add('show'), 80 * i + 200);
       });
@@ -827,7 +874,7 @@
         applyTheme();
       });
 
-      // Dropdown услуг
+      // Панелька с услугами
       const dropdown = document.getElementById('navServices');
       const servicesToggle = document.getElementById('servicesToggle');
       const servicesMenu = document.getElementById('servicesMenu');
@@ -870,7 +917,7 @@
         }, { passive: true });
       }
 
-      // Smooth scroll для ссылок #
+      // Smooth scroll для ссылок
       function getHeaderOffset() {
         const header = document.querySelector('header.header');
         if (!header) return 0;

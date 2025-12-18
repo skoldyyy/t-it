@@ -7,8 +7,9 @@
   <link rel="icon" type="image/png" href="img/t-it-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg-900: #050615;
@@ -31,7 +32,7 @@
     
     body{
       margin:0;
-      font-family:"Inter",system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:"Inter", system-ui, "Segoe UI", "Roboto", "Arial", sans-serif;
       color:var(--text);
       background:
         radial-gradient(600px 200px at 10% 10%, rgba(123,97,255,0.07), transparent 12%),
@@ -51,12 +52,12 @@
       max-width:var(--max-width);
       margin:8px auto;
       display:grid;
-      gap:18px;
+      gap:24px;
     }
 
     header.header{
       display:flex;
-      gap:18px;
+      gap:22px;
       align-items:center;
       padding:14px;
       border-radius:12px;
@@ -68,7 +69,7 @@
     }
     .logo img{ width:56px;height:56px;border-radius:10px;object-fit:cover; }
     .brand{ display:flex; flex-direction:column; gap:2px;}
-    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text); }
+    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text);}
     .brand p{ margin:0; font-size:12px; color:var(--muted); }
 
     .nav-contacts{ margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
@@ -102,6 +103,7 @@
       font-weight:600; font-size:14px; display:inline-flex; align-items:center; gap:8px;
       transition: all .14s ease;
       background: transparent; border: 0;
+      font-family: "Science Gothic";
     }
     .menu a:hover, .menu .nav-link:hover,
     .menu a:focus, .menu .nav-link:focus { color:var(--text); transform:translateY(-3px); background:rgba(255,255,255,0.02); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
@@ -122,10 +124,7 @@
       color:var(--muted); background:transparent; border:0; font-weight:600; font-size:14px;
       display:inline-flex; align-items:center; gap:8px;
     }
-    .dropdown-toggle:hover, .dropdown-toggle:focus { color:var(--text); background:rgba(255,255,255,0.02); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none; }
-    .dropdown-toggle .chev {
-      display:inline-block; transition: transform .18s ease; font-size:12px; color:var(--muted);
-    }
+    .dropdown-toggle:hover, .dropdown-toggle:focus { color:var(--text); background:rgba(255,255,255,0.02); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(2,6,23,0.12); outline:none;  }
 
     .dropdown.open .dropdown-toggle .chev { transform: rotate(180deg); color:var(--text); }
 
@@ -189,18 +188,20 @@
       font-weight:700; 
       font-size:13px;
       box-shadow: 0 6px 18px rgba(95,176,255,0.04);
+      pointer-events: none;
+      font-family: "Science Gothic";
     }
 
     h1.h-title{
       margin:0; 
-      font-size:34px; 
-      line-height:1.05; 
+      font-size:32px; 
+      line-height: 1.2; 
       color:var(--text); 
-      letter-spacing:-0.2px;
+      letter-spacing:-0.6px;
       text-shadow: 0 6px 30px rgba(2,6,23,0.6);
     }
 
-    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:70ch; }
+    p.lead{ margin:0; color:var(--muted); font-size:16px; max-width:78ch; font-family: "Play", sans-serif; line-height:1.2; font-weight: 600;}
 
     .cta-row{ display:flex; gap:12px; align-items:center; margin-top:6px; flex-wrap:wrap; }
     .btn-cta{
@@ -228,7 +229,7 @@
     .hero-right{
       position:relative;
       min-height:100%;
-      background-image: url('img/image.png'); /* картинка справа */
+      background-image: url('img/pcv1.png'); /* картинка справа */
       background-size:cover; 
       background-position:center;
     }
@@ -239,7 +240,7 @@
       mix-blend-mode:multiply;
     }
     .hero-cta-wrap{
-      position:absolute; right:65px; bottom:18px;
+      position:fixed; right:65px; bottom:18px; 
     }
     .hero-badge{
       padding:14px 18px; border-radius:12px; color:white; font-weight:800;
@@ -254,7 +255,7 @@
     .content{
       padding:28px 34px; background:transparent;
     }
-    .content h3{ margin:0 0 8px 0; color:var(--text); }
+    .content h3{ margin:0 0 8px 0; color:var(--text); font-family: "Science Gothic"}
     .grid{
       display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:14px;
     }
@@ -268,8 +269,8 @@
       align-items: center;
     }
     .service:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(2,6,23,0.24); }
-    .service h4{ margin:0 0 8px 0; color:var(--text); font-size:16px; }
-    .service p{ margin-top:10px; color:var(--muted); font-size:14px; }
+    .service h4{ margin:0 0 8px 0; color:var(--text); font-size:16px; pointer-events: none; font-family: "Science Gothic";}
+    .service p{ margin-top:10px; color:var(--muted); font-size:14px; pointer-events: none; font-family: "Science Gothic"; letter-spacing: 1.4;}
 
     .contacts-block{
       display:flex; gap:20px; align-items:flex-start; justify-content:space-between;
@@ -277,25 +278,11 @@
       border:1px solid rgba(255,255,255,0.02); backdrop-filter: blur(6px);
     }
     .contacts-block .col{ flex:1; min-width:260px; }
-    .contacts-block h3{ margin:0 0 8px 0; color:var(--text); }
+    .contacts-block h3{ margin:0 0 8px 0; color:var(--text); font-family: "Science Gothic";}
     .contacts-block p{ margin:0; color:var(--muted); }
 
-    .form input, .form textarea{
-      width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
-      background: rgba(255,255,255,0.02); color:var(--text); font-size:14px;
-      transition: box-shadow .14s ease, border-color .14s ease;
-      resize: vertical;
-    }
-    .form input:focus, .form textarea:focus{
-      outline:none; box-shadow: 0 10px 30px var(--focus); border-color: rgba(95,176,255,0.22);
-    }
-    .form .submit{
-      display:inline-block; margin-left:auto; margin-top:4px; padding:10px 14px; border-radius:10px;
-      border:0; background: linear-gradient(90deg,var(--accent-a),var(--accent-b)); color:white; font-weight:700; cursor:pointer;
-    }
-
     footer{
-      text-align:center; color:var(--muted); font-size:13px; padding:12px;
+      text-align:center; color:var(--muted); font-size:13px; padding:12px; pointer-events: none;
     }
 
     .map-col { flex:1; min-width:320px; }
@@ -403,7 +390,7 @@
         flex-direction: column;
         gap: 0;
         overflow-y: auto;
-        height: 72vh;
+        max-height: 72vh;
       }
       .menu.open { transform: translateY(0); }
 
@@ -503,46 +490,46 @@
       cursor: pointer;
     }
     
-    .toast {
-      opacity: 0;
-      min-width: 250px;
-      margin-left: -125px;
-      background-color: #4CAF50;
-      color: #fff;
-      text-align: center;
-      border-radius: 5px;
-      padding: 16px;
-      position: fixed;
-      z-index: 10000; /* Выше всего */
-      left: 50%;
-      bottom: 30px;
-      font-size: 17px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .toast.hide {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    /* Адаптация toast для мобильных */
-    @media (max-width: 720px) {
       .toast {
-        bottom: auto;
-        top: 30px; /* Сверху, чтобы не перекрывать нижнюю панель */
-        min-width: 80%; /* Шире для маленьких экранов */
-        margin-left: -40%; /* Центрирование */
-        font-size: 15px; /* Меньше шрифт */
-        padding: 12px;
+        opacity: 0;
+        margin-left: -125px;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 16px;
+        position: fixed;
+        z-index: 10000;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transform: translateY(20px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        pointer-events: none;
       }
-    }
+
+      .toast { background-color: #4CAF50; }
+      .toast-passive { background-color: #333; min-width: 170px;}
+
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .toast.hide {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @media (max-width: 720px) {
+        .toast {
+          bottom: auto;
+          top: 30px;
+          min-width: 80%;
+          margin-left: -40%;
+          font-size: 15px;
+          padding: 12px;
+        }
+      }
   </style>
 </head>
 <body>
@@ -559,7 +546,7 @@
       </div>
 
       <div class="nav-contacts" aria-hidden="false">
-        <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+        <a title="Открыть в WhatsApp" class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
           <span><strong>+7 701 918 59 94</strong></span>
           <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async"> 
         </a>
@@ -578,10 +565,10 @@
 
       <div class="menu" role="navigation" aria-label="Основное меню" id="mainMenu">
         <button class="menu-close" id="menuClose" aria-label="Закрыть меню">Закрыть ×</button>
-        <a href="t_it_redesign.html">Главная</a>
+        <a href="#" onclick="Current()">Главная</a>
 
         <div class="dropdown" id="navServices">
-          <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle">
+          <button class="dropdown-toggle" aria-expanded="false" aria-controls="servicesMenu" id="servicesToggle" style="font-family:'Science Gothic';">
             Услуги
           </button>
           <div class="dropdown-menu" id="servicesMenu" role="menu">
@@ -594,9 +581,9 @@
           </div>
         </div>
 
-        <a href="#contacts">Контакты</a>
-        <a href="#address">Адрес</a>
         <a href="selling.html">Продажа компьютеров</a>
+        <a href="#address">Адрес</a>
+        <a href="#contacts">Контакты</a>
         
       </div>
     </div>
@@ -604,25 +591,25 @@
     <section class="card hero fade-up" id="heroCard" aria-labelledby="heroTitle">
       <div class="hero-left">
         <span class="pill">О нас</span>
-        <h1 id="heroTitle" class="h-title">T-IT - динамично развивающаяся IT-компания</h1>
+        <h1 id="heroTitle" class="h-title">T-IT - динамично развивающаяся IT-компания!</h1>
         <p class="lead">С 2012 года мы повышаем эффективность бизнеса клиентов: серверы, сети, облака, безопасность и кастомные решения. Быстро, профессионально и с вниманием к результату.</p>
 
         <div style="margin-top:14px; display:flex; gap:12px; align-items:flex-start;">
           <div style="min-width:0">
-            <h3 style="margin:0 0 6px 0; font-size:15px; color:var(--text)">Миссия</h3>
-            <p style="margin:0;color:var(--muted);font-size:14px;max-width:58ch"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
+            <h3 style="margin:0 0 6px 0; font-family: 'Science Gothic'; font-size:15px; color:var(--text)">Миссия</h3>
+            <p style="margin:0;color:var(--muted);font-size:14px;max-width:65ch; font-family: 'Roboto Mono'"><em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em></p>
           </div>
         </div>
       </div>
       <a href="selling.html" class="hero-link" role="link">
-  <div class="hero-right" aria-hidden="true">
-    <div class="hero-cta-wrap">
-      <span class="hero-badge">Сборка и продажа компьютеров</span>
-    </div>
-  </div>
-</a>
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-cta-wrap">
+          <span class="hero-badge" style="font-family: 'Play';">Сборка и продажа компьютеров</span>
+        </div>
+      </div>
+      </a>
     </section>
-
+    
     <section class="card fade-up" style="overflow:visible;">
       <div class="content" id="services">
         <h3>Основные направления</h3>
@@ -633,7 +620,7 @@
           </div>
           <div class="service">
             <h4><img class="card-icon" width="24" height="22" src="img/service-centre-ico.png" alt="Service Centre"> Сервисный центр</h4>
-            <p>У нас опытные и квалифицированные специалисты по ремонту компьютеров, ноутбуков, моноблоков, мониторов, принтеров, многофункциональных устройств и много чего другого!</p>
+            <p>У нас опытные и квалифицированные специалисты по ремонту компьютеров, ноутбуков, моноблоков, мониторов, принтеров и много чего другого!</p>
           </div>
           <div class="service">
             <h4><img class="card-icon" width="24" height="22" src="img/cloud-service-ico.png" alt="Cloud Service">Облачные хранилища</h4>
@@ -671,9 +658,9 @@
 
         <div class="map-overlay" aria-hidden="false">
           <div class="addr">
-            <strong>Сервисный Центр T-IT </strong>
-            <div>Ул. Академика Сатпаева, 46</div>
-            <div style="font-size:12px;color:var(--muted);margin-top:4px;">Пн–Пт 10:00–18:00</div>
+            <strong style="font-family: 'Science Gothic';">Сервисный Центр T-IT </strong>
+            <div style="font-family: 'Play';">Ул. Академика Сатпаева, 46</div>
+            <div style="font-size: 12px; margin-top: 4px; font-family: 'Play';">Пн–Пт 10:00–18:00</div>
           </div>
 
           <div class="map-actions" role="group" aria-label="Действия с картой">
@@ -688,14 +675,14 @@
   <div class="col">
     <h3>Контакты</h3>
     <p>Телефон: <strong style="color:var(--text);">
-      <a class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
+      <a title="Открыть в WhatsApp" class="wh-link" href="https://wa.me/77019185994" target="_blank" rel="noopener noreferrer" aria-label="Чат в WhatsApp +7 701 918 59 94">
         <span>+7 701 918 59 94</span>
         <img class="wh-icon" src="img/whatsapp-logo.png" width="20" height="20" alt="WhatsApp" loading="lazy" decoding="async">
       </a>
-      <img class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать номер телефона" onclick="copyPhone()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
+      <img title="Скопировать номер телефона" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать номер телефона" onclick="copyPhone()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
     </strong>
     <br> Почта: <strong style="color:var(--text)"> it@t-it.kz
-      <img class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать email" onclick="copyEmail()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
+      <img title="Скопировать почту" class="copy-icon" src="img/copy-ico.png" width="20" height="20" alt="Копировать email" onclick="copyEmail()" style="cursor: pointer; margin-left: 10px; vertical-align: middle;">
     </strong> </p>
   </div>
 </section>
@@ -703,11 +690,11 @@
     <footer class="fade-up">© 2012 «T-IT»</footer>
   </div>
 
-  <!-- Toast с aria-live для доступности -->
-  <div id="toast" class="toast" aria-live="polite">Скопировано в буфер обмена!</div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <div id="toast-passive" class="toast toast-passive" role="status" aria-live="polite"></div>
 
   <script>
-    // Объединённый скрипт для всех функций
     const GM_LAT = 52.288891703060415;
     const GM_LNG = 76.94001087225888;
     const PLACE_ID = "ChIJsaLHeCk1-EIRGxPL-B_b5ck";
@@ -719,20 +706,56 @@
       return (('ontouchstart' in window) || navigator.maxTouchPoints > 0);
     }
 
+const toastTimers = {};
+
+    function showToast(message, options = {}) {
+      const id = options.id || 'toast';
+      const duration = options.duration ?? 2000;
+      const el = document.getElementById(id);
+      if (!el) return console.warn('Toast element not found:', id);
+
+      el.textContent = message;
+
+      if (toastTimers[id]) {
+        clearTimeout(toastTimers[id]);
+        toastTimers[id] = null;
+      }
+
+      el.classList.remove('hide');
+      void el.offsetWidth;
+      el.classList.add('show');
+
+      toastTimers[id] = setTimeout(() => {
+        el.classList.remove('show');
+        el.classList.add('hide');
+        toastTimers[id] = null;
+      }, duration);
+    }
+
+    function showPassiveToast(message, duration) {
+      showToast(message, { id: 'toast-passive', duration });
+    }
+    function showPrimaryToast(message, duration) {
+      showToast(message, { id: 'toast', duration });
+    }
+
     function copyPhone() {
-      const phoneNumber = '+77019185994';
+      const phoneNumber = '+7 701 918 59 94';
       copyToClipboard(phoneNumber, 'Номер скопирован в буфер обмена!');
     }
 
     function copyEmail() {
       const email = 'it@t-it.kz';
-      copyToClipboard(email, 'Email скопирован в буфер обмена!');
+      copyToClipboard(email, 'Почта скопирована в буфер обмена!');
+    }
+    function Current() {
+      showPassiveToast("Вы уже здесь");
     }
 
     function copyToClipboard(text, message) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
-          showToast(message);
+          showPrimaryToast(message);
         }).catch(err => {
           fallbackCopy(text, message, err);
         });
@@ -747,13 +770,27 @@
       tempInput.value = text;
       document.body.appendChild(tempInput);
       tempInput.select();
-      document.execCommand('copy');
+      try {
+        document.execCommand('copy');
+        showPrimaryToast(message);
+      } catch(e) {
+        console.error('Fallback copy failed', e);
+      }
       document.body.removeChild(tempInput);
-      showToast(message);
     }
 
     function showToast(message) {
       const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      toast.classList.remove('hide');
+      setTimeout(() => {
+        toast.classList.add('hide');
+        toast.classList.remove('show');
+      }, 2000);
+    }
+    function showPassiveToast(message) {
+      const toast = document.getElementById('toast-passive');
       toast.textContent = message;
       toast.classList.add('show');
       toast.classList.remove('hide');
@@ -797,7 +834,7 @@
         applyTheme();
       });
 
-      // Dropdown услуг
+      // Панелька с услугами
       const dropdown = document.getElementById('navServices');
       const servicesToggle = document.getElementById('servicesToggle');
       const servicesMenu = document.getElementById('servicesMenu');
@@ -909,7 +946,7 @@
         }
       });
 
-      // Карта Google
+      // Карта
       const openLink = document.getElementById('openGMaps');
       const directionsBtn = document.getElementById('getDirections');
 
@@ -918,7 +955,6 @@
       const label = 'Сервисный Центр T-IT';
       const placeQueryText = 'Компания T-IT сервисный центр, Павлодар';
 
-      // URLs (web fallbacks)
       const webPlaceById = `https://www.google.com/maps/place/?q=place_id:ChIJsaLHeCk1-EIRGxPL-B_b5ck`;
       const webSearch = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeQueryText)}`;
       const webCoords = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
@@ -941,7 +977,6 @@
 
         if (isAndroid) {
           let opened = false;
-          // try intent first
           try {
             window.location.href = intentUri;
             opened = true;
