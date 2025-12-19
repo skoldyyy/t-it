@@ -57,7 +57,7 @@
 
     header.header{
       display:flex;
-      gap:22px;
+      gap:18px;
       align-items:center;
       padding:14px;
       border-radius:12px;
@@ -69,12 +69,12 @@
     }
     .logo img{ width:56px;height:56px;border-radius:10px;object-fit:cover; }
     .brand{ display:flex; flex-direction:column; gap:2px;}
-    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text);}
-    .brand p{ margin:0; font-size:12px; color:var(--muted); }
+    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text); font-family: "Play", sans-serif; }
+    .brand p{ margin:0; font-size:12px; color:var(--muted); font-family: "Play"; }
 
     .nav-contacts{ margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
     .nav-contacts .phone{ font-weight:700; color:var(--text); display:inline-flex; align-items:center; gap:8px; }
-    .nav-contacts .small{ font-size:12px; color:var(--muted); }
+    .nav-contacts .small{ font-size:12px; color:var(--muted); font-family: "Play";}
 
     .wh-icon { width:20px; height:20px; display:inline-block; vertical-align:middle; }
     .wh-link { color:var(--text); text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
@@ -85,9 +85,14 @@
     /* переключатель тем */
     .controls{ display:flex; gap:8px; align-items:center; margin-left:12px; }
     .theme-toggle{
-      padding:8px 10px; border-radius:10px; cursor:pointer; border:0;
+      padding:8px 10px; 
+      border-radius:10px; 
+      cursor:pointer; border:0;
       background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      color:var(--muted); font-weight:700; font-size:13px;
+      color:var(--muted); 
+      font-weight:700; 
+      font-size:12px;
+      font-family: "Science Gothic";
     }
 
     /* навигация */
@@ -279,7 +284,7 @@
     }
     .contacts-block .col{ flex:1; min-width:260px; }
     .contacts-block h3{ margin:0 0 8px 0; color:var(--text); font-family: "Science Gothic";}
-    .contacts-block p{ margin:0; color:var(--muted); }
+    .contacts-block p{ margin:0; color:var(--muted);}
 
     footer{
       text-align:center; color:var(--muted); font-size:13px; padding:12px; pointer-events: none;
@@ -534,7 +539,7 @@
 </head>
 <body>
   <div class="wrap" role="main">
-    <header class="header fade-up" id="siteHeader">
+    <header class="header" id="siteHeader">
       <div style="display:flex;gap:12px;align-items:center;">
         <div class="logo" aria-hidden="true">
           <img src="img/t-it-logo.png" alt="T-IT logo" loading="lazy">
@@ -801,7 +806,6 @@ const toastTimers = {};
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Fade-up анимация
       document.querySelectorAll('.fade-up').forEach((el, i) => {
         setTimeout(() => el.classList.add('show'), 80 * i + 200);
       });

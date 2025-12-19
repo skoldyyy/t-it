@@ -52,7 +52,7 @@
       max-width:var(--max-width);
       margin:8px auto;
       display:grid;
-      gap:18px;
+      gap:24px;
     }
 
     header.header{
@@ -69,23 +69,29 @@
     }
     .logo img{ width:56px;height:56px;border-radius:10px;object-fit:cover; }
     .brand{ display:flex; flex-direction:column; gap:2px;}
-    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text); }
-    .brand p{ margin:0; font-size:12px; color:var(--muted); }
+    .brand h1{ margin:0; font-size:18px; font-weight:700; letter-spacing:0.2px; color:var(--text); font-family: "Play", sans-serif; }
+    .brand p{ margin:0; font-size:12px; color:var(--muted); font-family: "Play";}
 
     .nav-contacts{ margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
     .nav-contacts .phone{ font-weight:700; color:var(--text); display:inline-flex; align-items:center; gap:8px; }
-    .nav-contacts .small{ font-size:12px; color:var(--muted);}
+    .nav-contacts .small{ font-size:12px; color:var(--muted); font-family: "Play";}
 
-    .wh-icon { width:18px; height:18px; display:inline-block; vertical-align:middle; }
+    .wh-icon { width:20px; height:20px; display:inline-block; vertical-align:middle; }
     .wh-link { color:var(--text); text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
     .wh-link:hover, .wh-link:focus { text-decoration:none; opacity:0.95; transform:translateY(-2px);}
 
     /* переключатель тем */
     .controls{ display:flex; gap:8px; align-items:center; margin-left:12px; }
     .theme-toggle{
-      padding:8px 10px; border-radius:10px; cursor:pointer; border:0;
+      padding:8px 10px; 
+      border-radius:10px; 
+      cursor:pointer; 
+      border:0;
       background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      color:var(--muted); font-weight:700; font-size:13px;
+      color:var(--muted); 
+      font-weight:700; 
+      font-size:12px;
+      font-family: "Science Gothic";
     }
 
     /* навигация */
@@ -191,15 +197,15 @@
 
     h1.h-title{
       margin:0; 
-      font-size:34px; 
+      font-size:32px; 
       line-height:1.05; 
       color:var(--text); 
       letter-spacing:-0.2px;
       text-shadow: 0 6px 30px rgba(2,6,23,0.6);
-      font-family: "Play", sans-serif;
+      font-family: "Science Gothic", sans-serif;
     }
 
-    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:88ch; line-height: 22px;}
+    p.lead{ margin:0; color:var(--muted); font-size:15px; max-width:88ch; line-height: 22px; font-family: "Science Gothic";}
 
     .cta-row{ display:flex; gap:12px; align-items:center; margin-top:6px; flex-wrap:wrap; }
     .btn-cta{
@@ -574,7 +580,7 @@
 </head>
 <body>
   <div class="wrap" role="main">
-    <header class="header fade-up" id="siteHeader">
+    <header class="header" id="siteHeader">
       <div style="display:flex;gap:12px;align-items:center;">
         <div class="logo" aria-hidden="true">
           <img src="img/t-it-logo.png" alt="T-IT logo" loading="lazy">
@@ -634,7 +640,7 @@
       <div class="hero-left-img"></div>
       <div class="hero-right-text">
         <span class="pill">«MadGameMachine»</span>
-        <h1 id="heroTitle" class="h-title">Компьютеры MadGameMachine «MGM»</h1>
+        <h1 id="heroTitle" class="h-title">Компьютеры «MadGameMachine»</h1>
         <p class="lead">
           <strong>Компьютеры «MGM» — это профессиональное конфигурирование и сборка высокопроизводительных игровых компьютеров.</strong>
           <br>
@@ -644,7 +650,7 @@
           <br><br>«MGM» предлагает индивидуальные проекты — от <strong>компактных игровых систем</strong> до <strong>мощных кастомных сборок</strong> с уникальным дизайном.
           <br><br><strong>Наша цель — сделать игровой опыт максимально качественным, а покупку — простой и прозрачной.</strong>
         </p>
-        <h3 style="font-family: 'Play', sans-serif; font-weight: 700;">«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
+        <h3 style="font-family: 'Science Gothic', sans-serif; font-weight: 700; font-size: 18px;">«MGM» — компьютеры, созданные под игру. Созданные под Вас!</h3>
       </div>
     </section>
 
@@ -917,7 +923,7 @@
         }, { passive: true });
       }
 
-      // Smooth scroll для ссылок
+      // Плавная штука для ссылок
       function getHeaderOffset() {
         const header = document.querySelector('header.header');
         if (!header) return 0;
