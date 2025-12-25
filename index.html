@@ -54,7 +54,7 @@
         display: flex;
         justify-content: center;
         background-repeat: no-repeat;
-        background-color: #111218;
+        background-color: var(--bg-900);
       }
 
       .wrap {
@@ -156,29 +156,6 @@
         margin-bottom: 2px;
       }
 
-      /* переключатель тем */
-      .controls {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        margin-left: 12px;
-      }
-      .theme-toggle {
-        padding: 8px 10px;
-        border-radius: 10px;
-        cursor: pointer;
-        border: 0;
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.02),
-          rgba(255, 255, 255, 0.01)
-        );
-        color: var(--muted);
-        font-weight: 700;
-        font-size: 12px;
-        font-family: "Science Gothic";
-      }
-
       /* навигация */
       nav.nav {
         display: flex;
@@ -212,7 +189,7 @@
         transition: all 0.14s ease;
         background: transparent;
         border: 0;
-        font-family: "Science Gothic";
+        font-family: "Play";
       }
       .menu a:hover,
       .menu .nav-link:hover,
@@ -356,6 +333,8 @@
         display: grid;
         grid-template-columns: 1fr 440px;
         min-height: 400px;
+        overflow: hidden;
+        min-height: auto;
       }
 
       .hero-left {
@@ -460,9 +439,10 @@
         mix-blend-mode: multiply;
       }
       .hero-cta-wrap {
-        position: fixed;
-        right: 65px;
-        bottom: 18px;
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 5;
       }
       .hero-badge {
         padding: 14px 18px;
@@ -488,7 +468,7 @@
       .content h3 {
         margin: 0 0 8px 0;
         color: var(--text);
-        font-family: "Science Gothic";
+        font-family: "Play";
       }
       .grid {
         display: grid;
@@ -518,15 +498,15 @@
         color: var(--text);
         font-size: 16px;
         pointer-events: none;
-        font-family: "Science Gothic";
+        font-family: "Play";
       }
       .service p {
         margin-top: 10px;
         color: var(--muted);
         font-size: 14px;
         pointer-events: none;
-        font-family: "Science Gothic";
-        letter-spacing: 1.4;
+        font-family: "Play";
+        font-weight: 600;
       }
 
       .contacts-block {
@@ -551,7 +531,7 @@
       .contacts-block h3 {
         margin: 0 0 8px 0;
         color: var(--text);
-        font-family: "Science Gothic";
+        font-family: "Play";
       }
       .contacts-block p {
         margin: 0;
@@ -820,14 +800,15 @@
           padding: 16px;
         }
         .wrap {
-          gap: 16px;
+          gap: 18px;
+          padding: 0 8px;
           margin: 0 auto;
         }
 
         .header {
           flex-wrap: wrap;
-          gap: 12px;
-          padding: 12px;
+          gap: 10px;
+          padding: 10px;
         }
         .nav-contacts {
           order: 3;
@@ -846,7 +827,7 @@
         }
         .hero-left {
           padding: 28px 20px;
-          gap: 14px;
+          gap: 18px;
         }
         .h-title {
           font-size: 26px;
@@ -860,8 +841,9 @@
         }
 
         .hero-right {
-          min-height: 180px;
-          order: -1;
+          min-height: 160px;
+          order: -1;background-position: center;
+          background-position: center;
         }
         .hero-cta-wrap {
           right: 16px;
@@ -870,11 +852,11 @@
         .hero-badge {
           padding: 10px 14px;
           font-size: 13px;
-          max-width: 260px;
+          max-width: 100%;
         }
 
         .content {
-          padding: 20px;
+          padding: 18px;
         }
         .grid {
           grid-template-columns: 1fr;
@@ -978,7 +960,6 @@
 
       .toast {
         opacity: 0;
-        margin-left: -125px;
         color: #fff;
         text-align: center;
         border-radius: 5px;
@@ -1091,21 +1072,17 @@
               aria-expanded="false"
               aria-controls="servicesMenu"
               id="servicesToggle"
-              style="font-family: 'Science Gothic'"
+              style="font-family: 'Play'"
             >
               Услуги
             </button>
             <div class="dropdown-menu" id="servicesMenu" role="menu">
-              <a href="#repair-laptops">Ремонт ноутбуков</a>
-              <a href="#repair-printers">Ремонт принтеров</a>
-              <a href="#computer-repair">Ремонт компьютеров</a>
-              <a href="#refilling-cartridges">Заправка картриджей</a>
-              <a href="#data-recovery"
-                >Восстановление информации с жестких дисков</a
-              >
-              <a href="#sale-equipment"
-                >Продажа новой и б/у компьютерной техники</a
-              >
+              <a>Ремонт ноутбуков</a>
+              <a>Ремонт принтеров</a>
+              <a>Ремонт компьютеров</a>
+              <a>Заправка картриджей</a>
+              <a>Восстановление информации с жестких дисков</a>
+              <a>Продажа новой и б/у компьютерной техники</a>
             </div>
           </div>
 
@@ -1150,20 +1127,13 @@
               >
                 Миссия
               </h3>
-              <p
-                style="
+              <p style="
                   margin: 0;
                   color: var(--muted);
                   font-size: 14px;
                   max-width: 65ch;
-                  font-family: 'Roboto Mono';
-                "
-              >
-                <em
-                  >Рост эффективности бизнеса клиентов благодаря
-                  профессиональным решениям в области информационных
-                  технологий.</em
-                >
+                  font-family: 'Roboto Mono';">
+                <em>Рост эффективности бизнеса клиентов благодаря профессиональным решениям в области информационных технологий.</em>
               </p>
             </div>
           </div>
@@ -1171,9 +1141,7 @@
         <a href="selling.html" class="hero-link" role="link">
           <div class="hero-right" aria-hidden="true">
             <div class="hero-cta-wrap">
-              <span class="hero-badge" style="font-family: 'Play'"
-                >Сборка и продажа компьютеров</span
-              >
+              <span class="hero-badge" style="font-family: 'Play'">Сборка и продажа компьютеров</span>
             </div>
           </div>
         </a>
@@ -1298,7 +1266,7 @@
 
           <div class="map-overlay" aria-hidden="false">
             <div class="addr">
-              <strong style="font-family: 'Science Gothic'"
+              <strong style="font-family: 'Play'; font-weight: 700;"
                 >Сервисный Центр T-IT
               </strong>
               <div style="font-family: 'Play'">Ул. Академика Сатпаева, 46</div>
